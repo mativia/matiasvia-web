@@ -1,0 +1,391 @@
+---
+// Sección de habilidades y tecnologías
+
+// Importar iconos desde el index centralizado
+import { ICONOS } from '../assets/iconos';
+
+// Datos de habilidades organizadas por categorías
+const skillCategories = [
+  {
+    title: "Lenguajes & Backend",
+    icon: "💻",
+    skills: [
+      { 
+        name: "C# (ASP.NET, Swagger, Entity Framework)", 
+        level: 90, 
+        icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="4" fill="#239120"/>
+          <path d="M12 6C8.7 6 6 8.7 6 12s2.7 6 6 6c2.4 0 4.5-1.4 5.5-3.5H15c-.7.9-1.8 1.5-3 1.5-2.2 0-4-1.8-4-4s1.8-4 4-4c1.2 0 2.3.6 3 1.5h2.5C16.5 7.4 14.4 6 12 6z" fill="white"/>
+          <path d="M17.5 10.5h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z" fill="white"/>
+          <path d="M20 10.5h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z" fill="white"/>
+        </svg>` 
+      },
+      { 
+        name: "Java (Spring, Hibernate, Maven)", 
+        level: 75, 
+        icon: ICONOS.JAVA
+      },
+      
+      { 
+        name: "JavaScript", 
+        level: 70, 
+        icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="4" fill="#F7DF1E"/>
+          <path d="M7.5 15.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V9h-2v6.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5h-2z" fill="#000"/>
+          <path d="M15.5 12.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0 2c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5z" fill="#000"/>
+          <path d="M18 9v1.5h-1.5V9H18zm-1.5 3v1.5H15V12h1.5z" fill="#000"/>
+        </svg>` 
+      },
+      { 
+        name: "Python (Django, Flask)", 
+        level: 65, 
+        icon: ICONOS.PYTHON
+      },
+      { 
+        name: "SQL (MySQL, PostgreSQL, SQLite, SQL Server)", 
+        level: 50, 
+        icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="4" fill="#336791"/>
+          <path d="M12 4c4 0 8 1 8 3v10c0 2-4 3-8 3s-8-1-8-3V7c0-2 4-3 8-3z" stroke="white" stroke-width="1" fill="none"/>
+          <ellipse cx="12" cy="7" rx="8" ry="3" fill="#E8F4FD"/>
+          <ellipse cx="12" cy="10" rx="8" ry="3" fill="#336791" opacity="0.3"/>
+          <ellipse cx="12" cy="14" rx="8" ry="3" fill="#336791" opacity="0.5"/>
+          <ellipse cx="12" cy="17" rx="8" ry="3" fill="#336791"/>
+        </svg>` 
+      }
+      
+    ]
+  },
+  {
+    title: "Frontend & CMS",
+    icon: "🎨",
+    skills: [
+      { 
+        name: "HTML/CSS (+ Tailwind CSS)", 
+        level: 90, 
+        icon: ICONOS.HTML
+      },
+      
+      { 
+        name: "React", 
+        level: 86, 
+        icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="4" fill="#61DAFB"/>
+          <circle cx="12" cy="12" r="2" fill="#282C34"/>
+          <ellipse cx="12" cy="12" rx="8" ry="3" stroke="#282C34" stroke-width="1" fill="none"/>
+          <ellipse cx="12" cy="12" rx="8" ry="3" stroke="#282C34" stroke-width="1" fill="none" transform="rotate(60 12 12)"/>
+          <ellipse cx="12" cy="12" rx="8" ry="3" stroke="#282C34" stroke-width="1" fill="none" transform="rotate(-60 12 12)"/>
+        </svg>` 
+      },
+      { 
+        name: "Astro", 
+        level: 70, 
+        icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="4" fill="#FF5D01"/>
+          <path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6l2-6z" fill="white"/>
+          <circle cx="12" cy="12" r="1.5" fill="#FF5D01"/>
+        </svg>` 
+      },
+    { 
+        name: "UI/UX", 
+        level: 70, 
+        icon: ICONOS.INTERFAZ_USUARIO
+      },
+      { 
+        name: "WordPress/WooCommerce/Elementor/TiendaNube", 
+        level: 90, 
+        icon: ICONOS.WORDPRESS
+      }
+    ]
+  },
+  {
+    title: "Habilidades de analista",
+    icon: "⚙️",
+    skills: [
+      { 
+        name: "Captura de requerimientos y documentación", 
+        level: 95, 
+        icon: ICONOS.DOCUMENTACION
+      },
+    
+      { 
+        name: "Procesos organizacionales", 
+        level: 80, 
+        icon: ICONOS.PLANIFICACION
+      },
+      { 
+        name: "Modelado UML & BPMN", 
+        level: 90, 
+        icon: ICONOS.BPMN
+      },
+      { 
+        name: "Analisis funcional y de sistemas", 
+        level: 90, 
+        icon: ICONOS.ANALISTA
+      },
+      { 
+        name: "Comunicación efectiva", 
+        level: 85, 
+        icon: ICONOS.PROMOCION
+      }
+      ]
+  },
+  {
+    title: "Herramientas & Metodologías",
+    icon: "🛠️",
+    skills: [
+      { 
+        name: "Git (GitHUB, GitLab)", 
+        level: 100, 
+        icon: ICONOS.UNIR
+      },
+      { 
+        name: "Jira", 
+        level: 100, 
+        icon: ICONOS.JIRA
+      },
+  { 
+        name: "Scrum", 
+        level: 92, 
+        icon: ICONOS.SCRUM
+      },
+      { 
+        name: "IA (chatGPT, cloud AI, prompt engineering, machine learning)", 
+        level: 86, 
+        icon: ICONOS.NODOS_IA
+      },
+      { 
+        name: "Docker", 
+        level: 60, 
+        icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="4" fill="#2496ED"/>
+          <rect x="6" y="8" width="3" height="2" fill="white"/>
+          <rect x="6" y="11" width="3" height="2" fill="white"/>
+          <rect x="10" y="8" width="3" height="2" fill="white"/>
+          <rect x="10" y="11" width="3" height="2" fill="white"/>
+          <rect x="14" y="8" width="3" height="2" fill="white"/>
+          <rect x="14" y="11" width="3" height="2" fill="white"/>
+          <rect x="8" y="5" width="3" height="2" fill="white"/>
+                    <path d="M4 14h16c1 0 2 1 2 2v2c0 1-1 2-2 2H4c-1 0-2-1-2-2v-2c0-1 1-2 2-2z" fill="white"/>
+        </svg>`
+      }
+    ]
+  }
+];
+
+
+// Logros destacados
+const achievements = [
+  {
+    title: "Automatización de ventas con Python",
+    issuer: "Aplicación de escritorio",
+    date: "2024",
+    icon: "🐍"
+  },
+  {
+    title: "E-commerce Osaka (WooCommerce)",
+    issuer: "Proyecto freelance",
+    date: "2024",
+    icon: "�"
+  },
+  {
+    title: "Landing GoGo Travel (WordPress + Elementor)",
+    issuer: "Proyecto freelance",
+    date: "2023",
+    icon: "🧭"
+  }
+];
+---
+
+<section id="skills" class="py-20 bg-white dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Encabezado de sección -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        Mis <span class="text-blue-600">Habilidades</span>
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Tecnologías y herramientas con las que trabajo para crear soluciones excepcionales
+      </p>
+    </div>
+
+    <!-- Grid de categorías de habilidades -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      {skillCategories.map((category) => (
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 hover:shadow-lg transition-shadow">
+          <div class="flex items-center mb-6">
+            <span class="text-3xl mr-4">{category.icon}</span>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">{category.title}</h3>
+          </div>
+          
+          <div class="space-y-4">
+            {category.skills.map((skill) => (
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    {typeof skill.icon === 'string' && skill.icon.includes('<svg') ? (
+                      <span class="text-lg mr-2 flex items-center" set:html={skill.icon}></span>
+                    ) : (
+                      <img src={typeof skill.icon === 'string' ? skill.icon : skill.icon.src} alt={skill.name} class="w-6 h-6 mr-2 object-contain" />
+                    )}
+                    <span class="font-medium text-gray-900 dark:text-white">{skill.name}</span>
+                  </div>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div 
+                    class="bg-linear-to-r from-blue-500 to-purple-600 h-2.5 rounded-full transition-all duration-1000 skill-bar"
+                    data-level={skill.level}
+                    style={{ width: '0%' }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Sección de workflow/proceso -->
+  <div class="bg-linear-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl p-8 mb-16">
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        Mi Proceso de Desarrollo
+      </h3>
+      
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Planificación</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Análisis de requisitos y diseño de la arquitectura</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Desarrollo</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Codificación con las mejores prácticas</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Testing</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Pruebas exhaustivas y control de calidad</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+            </svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Deploy</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Despliegue y monitoreo continuo</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+        ¿Necesitas estas habilidades en tu próximo proyecto?
+      </p>
+      <a 
+        href="#contact"
+        class="inline-flex items-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl"
+      >
+        Hablemos
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .skill-item:nth-child(1) { animation-delay: 0.1s; }
+  .skill-item:nth-child(2) { animation-delay: 0.2s; }
+  .skill-item:nth-child(3) { animation-delay: 0.3s; }
+  .skill-item:nth-child(4) { animation-delay: 0.4s; }
+  .skill-item:nth-child(5) { animation-delay: 0.5s; }
+  .skill-item:nth-child(6) { animation-delay: 0.6s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // Animación de barras de progreso
+  function initSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-bar');
+    
+    const animateSkillBars = () => {
+      skillBars.forEach((bar, index) => {
+        if (!(bar instanceof HTMLElement)) {
+          return;
+        }
+
+        const level = bar.getAttribute('data-level');
+        if (!level) {
+          return;
+        }
+
+        // Añadir un retraso escalonado para cada barra
+        setTimeout(() => {
+          bar.style.width = `${level}%`;
+        }, index * 100 + 500);
+      });
+    };
+
+    // Intersection Observer para animar cuando la sección es visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateSkillBars();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '0px 0px -100px 0px'
+    });
+
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+      observer.observe(skillsSection);
+    }
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSkillBars);
+  } else {
+    initSkillBars();
+  }
+
+  // También ejecutar en caso de navegación SPA
+  document.addEventListener('astro:page-load', initSkillBars);
+</script>
