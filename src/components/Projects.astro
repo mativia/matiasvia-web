@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import ProjectCard from './ProjectCard.astro';
+import { imageConfig } from 'astro:assets';
 
 // Proyectos destacados
 const projects = [
@@ -15,22 +16,29 @@ const projects = [
   {
     title: "AirCor • Sistema de reservas aéreas",
     description: "Gestion de reservas y seguimiento de vuelos de Aerolíneas Cordobesas, administrando la definición de vuelos, aeropuertos y aeronaves vinculados a los viajes; brindando, también información con reportería para la toma de decisiones.",
-    technologies: ["WordPress", "WooCommerce", "PHP", "CSS", "SEO"]
+    technologies: ["C#", "SSQL Server Management Studio", ".NET Framework / WinForms"],
+    image : "src/assets/projects/AirCor/Definicion-vuelo.png",
+    githubUrl: "https://github.com/mativia/AirCor.git"
   },
   {
     title: "GoGo Travel • Landing orientada a leads",
-    description: "Sitio promocional construido con WordPress + Elementor. Integración de formularios, copy enfocado en conversión y mejoras SEO/UX basadas en métricas de uso.",
-    technologies: ["WordPress", "Elementor", "UX", "SEO", "Automatización"]
+    description: "Sitio promocional para una empresa de turismo GoGoTravel, construido con WordPress + Elementor. Integración de formularios, copy enfocado en conversión y mejoras SEO/UX basadas en métricas de uso.",
+    technologies: ["WordPress", "Elementor", "UX", "SEO"],
+    image : "src/assets/projects/GoGoTravel/home-gogotravel.png",
+    liveUrl : "https://gogotravel.com.ar/"
   },
   {
-    title: "Quantum Sports • E-commerce de indumentaria",
-    description: "Desarrollo y personalización de tienda para equipamiento deportivo. Gestión de catálogo, experiencia móvil optimizada y configuración de logística.",
-    technologies: ["WooCommerce", "PHP", "Optimización", "Diseño responsivo"]
+    title: "Ventas Panaderia",
+    description: "Sistema de ventas para panadería desarrollado en Python con base de datos MySQL. Incluye gestión de productos, clientes y reportes de ventas.",
+    technologies: ["Python", "Tkinter", "MySQL", "Gestión"],
+    image : "src/assets/projects/panaderia/REGISTRAR-venta-panaderia.png",
+    githubUrl: "https://github.com/mativia/registro-ventas-panaderia.git"
   },
   {
-    title: "Sistema de pasajes aéreo",
-    description: "Proyecto académico en C#: aplicación Windows Forms con MySQL para la venta y administración de pasajes. Incluye panel de control y reportes.",
-    technologies: ["C#", "Windows Forms", "MySQL", "Gestión"]
+    title: "Code Lab",
+    description: "Landing Page para promocion de una empresa de desarrollo de software. Construida con Astro, optimizada para SEO y velocidad de carga.",
+    technologies: ["Astro"],
+    image: "src/assets/projects/codelab/home-codelab.png",
   }
 ];
 ---
