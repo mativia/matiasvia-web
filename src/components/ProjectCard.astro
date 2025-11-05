@@ -5,6 +5,7 @@ export interface Props {
   description: string;
   technologies: string[];
   image?: string;
+  image2?: string;
   link?: string;
   liveUrl?: string;
   githubUrl?: string;
@@ -16,6 +17,7 @@ const {
   description, 
   technologies,
   image,
+  image2,
   link,
   liveUrl, 
   githubUrl, 
@@ -26,7 +28,26 @@ const {
 <div class={`group relative bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden ${featured ? 'md:col-span-2' : ''}`}>
   <!-- Imagen del proyecto -->
   <div class="relative h-64 md:h-72 lg:h-80 bg-linear-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-gray-600 overflow-hidden">
-    {image ? (
+    {featured && image2 ? (
+      <!-- Layout de dos imágenes para proyectos destacados -->
+      <div class="flex h-full">
+        <div class="flex-1 relative">
+          <img 
+            src={image} 
+            alt={`${title} - Vista 1`}
+            class="w-full h-full object-contain bg-white dark:bg-gray-100 group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="flex-1 relative border-l border-gray-200 dark:border-gray-600">
+          <img 
+            src={image2} 
+            alt={`${title} - Vista 2`}
+            class="w-full h-full object-contain bg-white dark:bg-gray-100 group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      </div>
+    ) : image ? (
+      <!-- Imagen única para proyectos normales -->
       <img 
         src={image} 
         alt={title}
