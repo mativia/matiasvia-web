@@ -11,7 +11,6 @@ const projects = [
     technologies: ["asp.net", "MySQL", "React", "Tailwind CSS", "Microservicios", "GitHUB", "SCRUM", "Swagger"],
     featured: true,
     image : "src/assets/projects/autoclinic/Dashboard-Principal.png",
-    image2 : "src/assets/projects/autoclinic/ModelosV.png",
     githubUrl: "https://github.com/mativia/AutoClinic-Software-de-gestion-para-talleres-mecanicos-UTN-FRC"
   },
   {
@@ -46,7 +45,7 @@ const projects = [
 ---
 
 <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-208 mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Encabezado de sección -->
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -74,7 +73,7 @@ const projects = [
     </div>
 
     <!-- Grid de proyectos -->
-    <div class="grid md:grid-cols-2 gap-10 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
       {projects.map((project) => (
         <ProjectCard {...project} />
       ))}
