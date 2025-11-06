@@ -27,18 +27,18 @@ const {
 
 <div class={`group relative bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden ${featured ? 'md:col-span-2' : ''}`}>
   <!-- Imagen del proyecto -->
-  <div class={`relative bg-linear-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-gray-600 overflow-hidden ${featured ? 'h-80 md:h-84 lg:h-94' : 'h-64 md:h-72 lg:h-80'}`}>
+  <div class={`relative bg-linear-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-gray-600 overflow-hidden flex items-center justify-center ${featured ? 'h-45 md:h-150 lg:h-120' : 'h-80 md:h-96 lg:h-112'}`}>
     {featured && image2 ? (
       <!-- Layout de dos imágenes para proyectos destacados -->
       <div class="flex h-full">
-        <div class="flex-1 relative">
+        <div class="flex-1 relative flex items-center justify-center">
           <img 
             src={image} 
             alt={`${title} - Vista 1`}
             class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
           />
         </div>
-        <div class="flex-1 relative border-l border-gray-200 dark:border-gray-600">
+        <div class="flex-1 relative border-l border-gray-200 dark:border-gray-600 flex items-center justify-center">
           <img 
             src={image2} 
             alt={`${title} - Vista 2`}
@@ -48,11 +48,13 @@ const {
       </div>
     ) : image ? (
       <!-- Imagen única para proyectos normales -->
-      <img 
-        src={image} 
-        alt={title}
-        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-      />
+      <div class="w-full h-full flex items-center justify-center">
+        <img 
+          src={image} 
+          alt={title}
+          class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
     ) : (
       <!-- Placeholder cuando no hay imagen -->
       <div class="w-full h-full flex items-center justify-center">
