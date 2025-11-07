@@ -136,28 +136,6 @@ const skillCategories = [
   }
 ];
 
-
-// Logros destacados
-const achievements = [
-  {
-    title: "Automatización de ventas con Python",
-    issuer: "Aplicación de escritorio",
-    date: "2024",
-    icon: "🐍"
-  },
-  {
-    title: "E-commerce Osaka (WooCommerce)",
-    issuer: "Proyecto freelance",
-    date: "2024",
-    icon: "�"
-  },
-  {
-    title: "Landing GoGo Travel (WordPress + Elementor)",
-    issuer: "Proyecto freelance",
-    date: "2023",
-    icon: "🧭"
-  }
-];
 ---
 
 <section id="skills" class="py-20 bg-white dark:bg-gray-900">
@@ -189,9 +167,11 @@ const achievements = [
                     {skill.icon && (
                       typeof skill.icon === 'string' && skill.icon.includes('<svg') ? (
                         <span class="text-lg mr-2 flex items-center" set:html={skill.icon}></span>
-                      ) : (
-                        <img src={typeof skill.icon === 'string' ? skill.icon : skill.icon.src} alt={skill.name} class="w-6 h-6 mr-2 object-contain" />
-                      )
+                      ) : skill.icon && typeof skill.icon === 'string' ? (
+                        <img src={skill.icon} alt={skill.name} class="w-6 h-6 mr-2 object-contain" />
+                      ) : skill.icon && typeof skill.icon === 'object' ? (
+                        <img src={skill.icon.src} alt={skill.name} class="w-6 h-6 mr-2 object-contain" />
+                      ) : null
                     )}
                     <span class="font-medium text-gray-900 dark:text-white">{skill.name}</span>
                   </div>
