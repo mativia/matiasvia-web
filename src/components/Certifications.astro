@@ -1,13 +1,6 @@
 ---
 // Componente de Certificaciones y Logros
 
-// Importar certificaciones
-import jsCertification from '../assets/certificaciones/javascript-coderhouse.png';
-import csharpCertification from '../assets/certificaciones/poo-csharp.jpg';
-import wpCertification from '../assets/certificaciones/wordpress-woocommerce.jpg';
-import britishSchoolCert from '../assets/certificaciones/britishschool-english-2.pdf';
-import aspnetCertification from '../assets/certificaciones/aspnet.jpg';
-
 // Datos de certificaciones
 const certifications = [
   {
@@ -15,7 +8,7 @@ const certifications = [
     issuer: "CoderHouse",
     date: "2024",
     type: "image",
-    file: jsCertification.src,
+    file: "public/assets/certificaciones/javascript-coderhouse.png",
     icon: "💻",
     description: "Certificación completa en JavaScript moderno"
   },
@@ -24,7 +17,7 @@ const certifications = [
     issuer: "Curso Especializado",
     date: "2024",
     type: "image", 
-    file: csharpCertification.src,
+    file: "/assets/certificaciones/poo-csharp.jpg",
     icon: "🟣",
     description: "POO avanzada con C# y .NET"
   },
@@ -33,7 +26,7 @@ const certifications = [
     issuer: "Desarrollo Web",
     date: "2024",
     type: "image",
-    file: wpCertification.src,
+    file: "/assets/certificaciones/wordpress-woocommerce.jpg",
     icon: "🌐",
     description: "Desarrollo completo con WordPress y WooCommerce"
   },
@@ -43,7 +36,7 @@ const certifications = [
     issuer: "British School",
     date: "2023",
     type: "pdf",
-    file: britishSchoolCert,
+    file: "/assets/certificaciones/britishschool-english-2.pdf",
     icon: "📚",
     description: "Certificacion de nivel intermedio de inglés"
   },
@@ -52,7 +45,7 @@ const certifications = [
     issuer: "Udemy",
     date: "2025",
     type: "image",
-    file: aspnetCertification.src,
+    file: "/assets/certificaciones/aspnet.jpg",
     icon: "🖥️",
     description: "aprendizaje avanzado de ASP.NET Core para desarrollo de APIs RESTful"
   }
