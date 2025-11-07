@@ -4,6 +4,7 @@ export interface Props {
   title: string;
   description: string;
   technologies: string[];
+  year?: string;
   image?: string;
   image2?: string;
   link?: string;
@@ -16,6 +17,7 @@ const {
   title, 
   description, 
   technologies,
+  year,
   image,
   image2,
   link,
@@ -110,13 +112,29 @@ const {
         </span>
       </div>
     )}
+
+    <!-- Badge del año -->
+    {year && (
+      <div class="absolute top-4 left-4">
+        <span class="px-3 py-1 bg-gray-900 bg-opacity-80 text-white text-sm font-semibold rounded-full backdrop-blur-sm">
+          {year}
+        </span>
+      </div>
+    )}
   </div>
 
   <!-- Contenido de la tarjeta -->
   <div class="p-8">
-    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-      {title}
-    </h3>
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+        {title}
+      </h3>
+      {year && (
+        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-medium rounded">
+          {year}
+        </span>
+      )}
+    </div>
     
     <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-base">
       {description}

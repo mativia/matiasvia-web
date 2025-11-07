@@ -14,5 +14,10 @@
     "astro": "^5.15.3",
     "lucide-react": "^0.548.0",
     "tailwindcss": "^4.1.16"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   }
 }
