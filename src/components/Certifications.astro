@@ -12,13 +12,31 @@ const certs = [
     type: "image" as const,
     file: jsCert.src,
     desc: "JS moderno, DOM, asincronismo y buenas prácticas",
-    // Visual identity
-    iconSvg: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="56" height="56" rx="10" fill="#F7DF1E"/>
-      <text x="6" y="46" font-family="monospace" font-size="28" font-weight="bold" fill="#1a1a1a">JS</text>
-    </svg>`,
-    gradient: "radial-gradient(ellipse at 20% 60%, #F7DF1E30 0%, transparent 55%), radial-gradient(ellipse at 85% 15%, #FBBF2420 0%, transparent 50%), radial-gradient(ellipse at 60% 90%, #F59E0B15 0%, transparent 45%)",
     glowColor: "#F7DF1E",
+    illustration: `<svg viewBox="0 0 320 176" xmlns="http://www.w3.org/2000/svg">
+      <!-- bg -->
+      <rect width="320" height="176" fill="#1C1C1C"/>
+      <!-- subtle grid -->
+      <rect width="320" height="176" fill="url(#jsgrid)" opacity="0.06"/>
+      <defs>
+        <pattern id="jsgrid" width="24" height="24" patternUnits="userSpaceOnUse">
+          <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#F7DF1E" stroke-width="0.4"/>
+        </pattern>
+      </defs>
+      <!-- code lines left -->
+      <text x="22" y="52"  font-family="monospace" font-size="11" fill="#60A5FA" opacity="0.55">async function</text>
+      <text x="22" y="70"  font-family="monospace" font-size="11" fill="#D2A8FF" opacity="0.55">  getData(url) {</text>
+      <text x="22" y="88"  font-family="monospace" font-size="11" fill="#A78BFA" opacity="0.45">    const res =</text>
+      <text x="22" y="106" font-family="monospace" font-size="11" fill="#34D399" opacity="0.5">    await fetch(url)</text>
+      <text x="22" y="124" font-family="monospace" font-size="11" fill="#F7DF1E" opacity="0.45">    return res.json()</text>
+      <text x="22" y="142" font-family="monospace" font-size="11" fill="#6B7280" opacity="0.4">  }</text>
+      <!-- JS logo right -->
+      <rect x="182" y="22" width="118" height="118" rx="14" fill="#F7DF1E"/>
+      <!-- JS text inside logo -->
+      <text x="196" y="116" font-family="Arial Black, Impact, sans-serif" font-size="68" font-weight="900" fill="#1C1C1C">JS</text>
+      <!-- bottom label -->
+      <text x="22" y="162" font-family="Arial, sans-serif" font-size="9" fill="#4B5563">CoderHouse · JavaScript · 2024</text>
+    </svg>`,
   },
   {
     title: "POO — C# & .NET",
@@ -27,12 +45,38 @@ const certs = [
     type: "image" as const,
     file: csharpCert.src,
     desc: "Programación orientada a objetos con C# y .NET",
-    iconSvg: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="56" height="56" rx="10" fill="#9B59B6"/>
-      <text x="5" y="44" font-family="monospace" font-size="26" font-weight="bold" fill="white">C#</text>
-    </svg>`,
-    gradient: "radial-gradient(ellipse at 25% 55%, #7C3AED28 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, #A855F720 0%, transparent 50%), radial-gradient(ellipse at 50% 85%, #9B59B615 0%, transparent 45%)",
     glowColor: "#A855F7",
+    illustration: `<svg viewBox="0 0 320 176" xmlns="http://www.w3.org/2000/svg">
+      <!-- bg -->
+      <rect width="320" height="176" fill="#0F0A1E"/>
+      <!-- glow circle -->
+      <circle cx="160" cy="88" r="72" fill="#512BD4" opacity="0.12"/>
+      <!-- C# symbol, large -->
+      <text x="68" y="126" font-family="Arial Black, Impact, sans-serif" font-size="88" font-weight="900" fill="#9B4DCA" opacity="0.95">C#</text>
+      <!-- OOP class diagram top-right -->
+      <!-- parent class box -->
+      <rect x="238" y="18" width="68" height="28" rx="5" fill="#2D1F45" stroke="#7C3AED" stroke-width="1"/>
+      <text x="249" y="36" font-family="monospace" font-size="9" fill="#C084FC">Vehicle</text>
+      <!-- arrow down -->
+      <line x1="272" y1="46" x2="272" y2="60" stroke="#7C3AED" stroke-width="1" stroke-dasharray="3,2"/>
+      <polygon points="268,58 272,66 276,58" fill="#7C3AED"/>
+      <!-- child class 1 -->
+      <rect x="222" y="66" width="50" height="26" rx="5" fill="#2D1F45" stroke="#A855F7" stroke-width="1"/>
+      <text x="230" y="83" font-family="monospace" font-size="9" fill="#C084FC">Car</text>
+      <!-- child class 2 -->
+      <rect x="278" y="66" width="36" height="26" rx="5" fill="#2D1F45" stroke="#A855F7" stroke-width="1"/>
+      <text x="283" y="83" font-family="monospace" font-size="9" fill="#C084FC">Bus</text>
+      <!-- keyword pills -->
+      <rect x="18" y="148" width="56" height="18" rx="9" fill="#2D1F45" stroke="#7C3AED" stroke-width="0.8"/>
+      <text x="27" y="160" font-family="monospace" font-size="8.5" fill="#C084FC">inherit</text>
+      <rect x="82" y="148" width="64" height="18" rx="9" fill="#2D1F45" stroke="#7C3AED" stroke-width="0.8"/>
+      <text x="91" y="160" font-family="monospace" font-size="8.5" fill="#C084FC">polymor.</text>
+      <rect x="154" y="148" width="58" height="18" rx="9" fill="#2D1F45" stroke="#7C3AED" stroke-width="0.8"/>
+      <text x="162" y="160" font-family="monospace" font-size="8.5" fill="#C084FC">encaps.</text>
+      <!-- .NET badge -->
+      <rect x="240" y="148" width="62" height="18" rx="9" fill="#512BD4" opacity="0.5"/>
+      <text x="256" y="160" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#E9D5FF">.NET</text>
+    </svg>`,
   },
   {
     title: "WordPress & WooCommerce",
@@ -41,12 +85,32 @@ const certs = [
     type: "image" as const,
     file: wpCert.src,
     desc: "E-commerce, contenidos y personalización avanzada",
-    iconSvg: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="56" height="56" rx="10" fill="#21759B"/>
-      <text x="5" y="44" font-family="monospace" font-size="26" font-weight="bold" fill="white">WP</text>
-    </svg>`,
-    gradient: "radial-gradient(ellipse at 30% 50%, #21759B28 0%, transparent 55%), radial-gradient(ellipse at 75% 20%, #3B82F620 0%, transparent 50%), radial-gradient(ellipse at 55% 85%, #0EA5E918 0%, transparent 45%)",
     glowColor: "#3B82F6",
+    illustration: `<svg viewBox="0 0 320 176" xmlns="http://www.w3.org/2000/svg">
+      <!-- bg -->
+      <rect width="320" height="176" fill="#0D1E30"/>
+      <!-- WP circle logo -->
+      <circle cx="108" cy="84" r="64" fill="#21759B" opacity="0.15"/>
+      <circle cx="108" cy="84" r="60" fill="none" stroke="#21759B" stroke-width="2.5" opacity="0.7"/>
+      <circle cx="108" cy="84" r="52" fill="none" stroke="#21759B" stroke-width="0.8" opacity="0.3"/>
+      <!-- W letterform (WordPress logo) -->
+      <text x="64" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="bold" fill="#21759B">W</text>
+      <!-- vertical separator -->
+      <line x1="195" y1="24" x2="195" y2="152" stroke="#1E3A5F" stroke-width="1"/>
+      <!-- WooCommerce side -->
+      <!-- bag shape -->
+      <path d="M230 76 L222 120 L298 120 L290 76 Z" fill="#96588A" opacity="0.25" stroke="#96588A" stroke-width="1.2"/>
+      <path d="M244 76 Q256 54 268 76" fill="none" stroke="#96588A" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- bag lines -->
+      <line x1="226" y1="96" x2="294" y2="96" stroke="#96588A" stroke-width="1" opacity="0.5"/>
+      <line x1="224" y1="108" x2="296" y2="108" stroke="#96588A" stroke-width="1" opacity="0.4"/>
+      <!-- cart icon -->
+      <circle cx="238" cy="128" r="5" fill="#96588A" opacity="0.7"/>
+      <circle cx="278" cy="128" r="5" fill="#96588A" opacity="0.7"/>
+      <!-- labels -->
+      <text x="208" y="152" font-family="Arial, sans-serif" font-size="8.5" fill="#96588A" opacity="0.8">WooCommerce</text>
+      <text x="22" y="164" font-family="Arial, sans-serif" font-size="9" fill="#21759B" opacity="0.6">WordPress · PHP · E-commerce · 2024</text>
+    </svg>`,
   },
   {
     title: "English II — Intensive",
@@ -55,12 +119,41 @@ const certs = [
     type: "pdf" as const,
     file: britishCert,
     desc: "Certificación de nivel básico / intermedio",
-    iconSvg: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="56" height="56" rx="10" fill="#059669"/>
-      <text x="7" y="44" font-family="monospace" font-size="26" font-weight="bold" fill="white">EN</text>
+    glowColor: "#EF4444",
+    illustration: `<svg viewBox="0 0 320 176" xmlns="http://www.w3.org/2000/svg">
+      <!-- bg -->
+      <rect width="320" height="176" fill="#0A1628"/>
+      <!-- Union Jack flag area -->
+      <rect x="18" y="22" width="172" height="110" rx="8" fill="#012169"/>
+      <clipPath id="flagclip"><rect x="18" y="22" width="172" height="110" rx="8"/></clipPath>
+      <g clip-path="url(#flagclip)">
+        <!-- St Andrew diagonal white -->
+        <line x1="18" y1="22"  x2="190" y2="132" stroke="white" stroke-width="30"/>
+        <line x1="190" y1="22" x2="18"  y2="132" stroke="white" stroke-width="30"/>
+        <!-- St Patrick diagonal red -->
+        <line x1="18" y1="22"  x2="190" y2="132" stroke="#C8102E" stroke-width="14"/>
+        <line x1="190" y1="22" x2="18"  y2="132" stroke="#C8102E" stroke-width="14"/>
+        <!-- St George cross white border -->
+        <rect x="18" y="67"  width="172" height="42" fill="white"/>
+        <rect x="86" y="22"  width="40"  height="110" fill="white"/>
+        <!-- St George cross red -->
+        <rect x="18" y="73"  width="172" height="30" fill="#C8102E"/>
+        <rect x="92" y="22"  width="28"  height="110" fill="#C8102E"/>
+      </g>
+      <!-- flag border -->
+      <rect x="18" y="22" width="172" height="110" rx="8" fill="none" stroke="#1E3A5F" stroke-width="1.5"/>
+      <!-- Right side branding -->
+      <text x="205" y="60"  font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#F1F5F9">British</text>
+      <text x="205" y="80"  font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#F1F5F9">School</text>
+      <line x1="205" y1="90" x2="302" y2="90" stroke="#1E3A5F" stroke-width="1"/>
+      <text x="205" y="107" font-family="Arial, sans-serif" font-size="10" fill="#7A99C4">English II</text>
+      <text x="205" y="122" font-family="Arial, sans-serif" font-size="10" fill="#7A99C4">Intensive Course</text>
+      <!-- level badge -->
+      <rect x="205" y="132" width="80" height="20" rx="10" fill="#1E3A5F" stroke="#3B82F6" stroke-width="0.8"/>
+      <text x="218" y="146" font-family="Arial, sans-serif" font-size="9" fill="#93C5FD">B1 · Intermedio</text>
+      <!-- bottom -->
+      <text x="18" y="165" font-family="Arial, sans-serif" font-size="9" fill="#4B5563">British School · Córdoba · 2023</text>
     </svg>`,
-    gradient: "radial-gradient(ellipse at 25% 55%, #05966928 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, #10B98120 0%, transparent 50%), radial-gradient(ellipse at 55% 85%, #34D39918 0%, transparent 45%)",
-    glowColor: "#10B981",
   },
 ];
 
@@ -95,38 +188,27 @@ const achievements = [
         >
 
           <!-- ── Visual preview ── -->
-          <div class="cert-preview relative h-44 overflow-hidden flex items-center justify-center"
-            style={`background:var(--bg-muted); --glow:${c.glowColor}`}>
+          <div class="cert-preview relative h-44 overflow-hidden"
+            style={`--glow:${c.glowColor}`}>
 
-            <!-- Mesh gradient background -->
-            <div class="absolute inset-0" style={`background:${c.gradient}`}></div>
+            <!-- SVG illustration (fills entire area) -->
+            <div class="absolute inset-0 w-full h-full" set:html={c.illustration}></div>
 
-            <!-- Dot grid pattern -->
-            <div class="absolute inset-0 dot-grid"></div>
+            <!-- Subtle vignette overlay -->
+            <div class="absolute inset-0"
+              style="background:linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 60%)"></div>
 
-            <!-- Glow orb -->
-            <div class="absolute w-32 h-32 rounded-full blur-2xl opacity-20 group-hover:opacity-35 transition-opacity duration-500"
+            <!-- Glow orb (accent, hover) -->
+            <div class="absolute w-40 h-40 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"
               style={`background:${c.glowColor}; top:50%; left:50%; transform:translate(-50%,-50%)`}></div>
-
-            <!-- Icon -->
-            <div class="relative z-10 cert-icon group-hover:scale-110 transition-transform duration-300 drop-shadow-lg"
-              style={`filter: drop-shadow(0 0 16px ${c.glowColor}60)`}
-              set:html={c.iconSvg}>
-            </div>
 
             <!-- Shimmer sweep on hover -->
             <div class="cert-shimmer absolute inset-0 pointer-events-none"></div>
 
-            <!-- Type badge -->
-            <div class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-medium border backdrop-blur-sm"
-              style="background:rgba(0,0,0,0.3); border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.7)">
-              {c.type === 'pdf' ? 'PDF' : 'Imagen'}
-            </div>
-
             <!-- "Ver cert" overlay on hover -->
             <div class="absolute inset-0 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm"
-                style="background:rgba(0,0,0,0.45); color:white; border:1px solid rgba(255,255,255,0.2)">
+                style="background:rgba(0,0,0,0.5); color:white; border:1px solid rgba(255,255,255,0.2)">
                 Ver certificación →
               </span>
             </div>
@@ -213,10 +295,11 @@ const achievements = [
     transition: background-position 0.6s ease;
   }
 
-  /* Icon sizing */
-  .cert-icon svg {
-    width: 56px;
-    height: 56px;
+  /* SVG fills preview area */
+  .cert-preview svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 </style>
 
