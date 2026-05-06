@@ -11,25 +11,35 @@ import "../styles/global.css";
 
 const currentYear = new Date().getFullYear();
 ---
-<Layout title="Portfolio - Matías Vía | Desarrollo & IA" description="Portfolio profesional de Matías Vía, estudiante avanzado de Analista en Sistemas orientado al desarrollo de software y la inteligencia artificial.">
-	<Navigation />
-	<main>
-		<Hero />
-		<About />
-		<Skills />
-		<Certifications />
-		<Projects />
-		<Contact />
-	</main>
-	
-	<!-- Footer -->
-	<footer class="bg-gray-900 text-white py-8">
-		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<p class="text-gray-400">
-				© {currentYear} Matías Vía. Construido con 
-				<a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">Astro</a> 
-				y <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">Tailwind CSS</a>.
-			</p>
-		</div>
-	</footer>
+<Layout
+  title="Portfolio — Matías Vía | Desarrollo & IA"
+  description="Analista en Sistemas y desarrollador freelance en Córdoba, Argentina. Especializado en Python, C#, React y automatización con IA."
+>
+  <Navigation />
+  <main>
+    <Hero />
+    <About />
+    <Skills />
+    <Certifications />
+    <Projects />
+    <Contact />
+  </main>
+
+  <footer class="py-8 border-t" style="background:var(--bg); border-color:var(--border-soft)">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-lg border flex items-center justify-center text-[10px] font-medium font-display"
+          style="border-color:var(--accent); color:var(--accent)">MV</div>
+        <span class="text-xs" style="color:var(--text-3)">© {currentYear} Matías Vía · Córdoba, AR</span>
+      </div>
+      <p class="text-xs" style="color:var(--text-3)">
+        Construido con
+        <a href="https://astro.build" target="_blank" rel="noopener noreferrer"
+          class="hover:underline" style="color:var(--accent)">Astro</a>
+        &nbsp;y&nbsp;
+        <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer"
+          class="hover:underline" style="color:var(--accent)">Tailwind CSS</a>
+      </p>
+    </div>
+  </footer>
 </Layout>

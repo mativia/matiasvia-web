@@ -1,180 +1,196 @@
 ---
-// Sección Hero - Presentación principal
 ---
 
-<section id="home" class="relative min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-  <!-- Fondo animado -->
-  <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-    <div class="absolute top-40 left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+<section id="home" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+
+  <!-- Subtle grid background -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+      style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 48px 48px;">
+    </div>
+    <!-- Glow blobs -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-[0.08] dark:opacity-[0.12] blur-3xl"
+      style="background: radial-gradient(circle, var(--accent) 0%, transparent 70%)"></div>
+    <div class="absolute bottom-0 -left-24 w-80 h-80 rounded-full opacity-[0.06] dark:opacity-[0.10] blur-3xl"
+      style="background: radial-gradient(circle, #8B5CF6 0%, transparent 70%)"></div>
   </div>
 
-  <!-- Contenido principal -->
-  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <!-- Saludo -->
-    <div class="mb-8">
-      <span class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium mb-4">
-        👋 ¡Hola! Soy el creador de este sitio web :)
-      </span>
-    </div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 lg:py-28">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-    <!-- Nombre principal -->
-    <h1 class="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
-  <span class="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-        Matias Agustin Via
-      </span>
-    </h1>
+      <!-- ── Left: Content ── -->
+      <div>
+        <!-- Available badge -->
+        <div class="mb-7 animate-fade-up">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border"
+            style="color:var(--green); border-color:color-mix(in srgb,var(--green) 30%,transparent); background:color-mix(in srgb,var(--green) 8%,transparent)">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--green)] animate-pulse"></span>
+            Disponible para proyectos
+          </span>
+        </div>
 
-    <!-- Título/Profesión -->
-    <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-8">
-      <span id="typewriter" class="border-r-2 border-blue-600"></span>
-    </h2>
+        <!-- Name -->
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-[var(--text-1)] mb-5 animate-fade-up delay-100">
+          Matías<br/>
+          <span style="color:var(--accent)">Vía</span>
+        </h1>
 
-    <!-- Descripción -->
-    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-      Estudiante avanzado de Analista en Sistemas con fuerte interés en el desarrollo de software y una marcada pasión por la inteligencia artificial.
-      Integro IA en mis proyectos para optimizar procesos, potenciar la ideación y mejorar la toma de decisiones tecnológicas.
-    </p>
+        <!-- Role -->
+        <p class="text-base sm:text-lg text-[var(--text-2)] mb-6 animate-fade-up delay-200">
+          Analista en Sistemas &nbsp;·&nbsp; Desarrollador&nbsp;·&nbsp; IA
+        </p>
 
-    <!-- Botones de acción -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a 
-        href="#contact" 
-        class="inline-flex items-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-      >
-        Contáctame
-        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </a>
-      
-      <a 
-        href="#projects" 
-        class="inline-flex items-center px-8 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium rounded-lg transition-colors"
-      >
-        Ver Proyectos
-        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </a>
-    </div>
+        <!-- Description -->
+        <p class="text-[var(--text-2)] leading-relaxed max-w-xl mb-9 animate-fade-up delay-300 text-sm sm:text-base">
+          Estudiante avanzado en UTN·FRC con experiencia freelance en desarrollo web
+          y software de escritorio. Integro inteligencia artificial en cada proyecto para
+          optimizar procesos y entregar resultados con impacto real.
+        </p>
 
-    <!-- Enlaces sociales -->
-    <div class="mt-12 flex justify-center space-x-6">
-      <a href="https://github.com/mativia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-        </svg>
-      </a>
-      
-      <a href="https://www.linkedin.com/in/matias-via" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-      </a>
-      
-      <a href="mailto:matt.via27@gmail.com" class="social-link" aria-label="Email">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-        </svg>
-      </a>
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-3 mb-10 animate-fade-up delay-400">
+          <a href="#projects"
+            class="px-6 py-3 rounded-xl text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:shadow-[0_0_24px_var(--accent-ring)]"
+            style="background:var(--accent)">
+            Ver proyectos →
+          </a>
+          <a href="#contact"
+            class="px-6 py-3 rounded-xl text-sm font-medium border transition-all duration-200 hover:bg-[var(--bg-muted)]"
+            style="border-color:var(--border); color:var(--text-1)">
+            Contactarme
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-[var(--border-soft)] animate-fade-up delay-500">
+          <div>
+            <div class="font-display text-2xl font-bold text-[var(--text-1)]">15+</div>
+            <div class="text-xs text-[var(--text-3)] mt-0.5 leading-tight">Proyectos<br/>entregados</div>
+          </div>
+          <div>
+            <div class="font-display text-2xl font-bold text-[var(--text-1)]">2+</div>
+            <div class="text-xs text-[var(--text-3)] mt-0.5 leading-tight">Años de<br/>experiencia</div>
+          </div>
+          <div>
+            <div class="font-display text-2xl font-bold text-[var(--text-1)]">4</div>
+            <div class="text-xs text-[var(--text-3)] mt-0.5 leading-tight">Certifi-<br/>caciones</div>
+          </div>
+        </div>
+
+        <!-- Socials -->
+        <div class="flex items-center gap-2 mt-8 animate-fade-in delay-600">
+          <a href="https://github.com/mativia" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+            class="p-2 rounded-lg text-[var(--text-3)] hover:text-[var(--text-1)] hover:bg-[var(--bg-muted)] transition-all duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/matias-via" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+            class="p-2 rounded-lg text-[var(--text-3)] hover:text-[#0A66C2] hover:bg-[var(--bg-muted)] transition-all duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:matt.via27@gmail.com" aria-label="Email"
+            class="p-2 rounded-lg text-[var(--text-3)] hover:text-[var(--accent)] hover:bg-[var(--bg-muted)] transition-all duration-200">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </a>
+          <div class="h-4 w-px mx-1 bg-[var(--border)]"></div>
+          <span class="text-xs text-[var(--text-3)]">Córdoba, AR · Remoto</span>
+        </div>
+      </div>
+
+      <!-- ── Right: Code card ── -->
+      <div class="hidden lg:flex justify-center items-center animate-fade-in delay-300">
+        <div class="relative w-full max-w-md">
+
+          <!-- Code editor card -->
+          <div class="rounded-2xl overflow-hidden border border-[var(--border)] shadow-[var(--sh-xl)]"
+            style="background:#0D1117">
+            <!-- Editor header -->
+            <div class="flex items-center gap-2 px-4 py-3 border-b"
+              style="background:#161B22; border-color:#21262D">
+              <span class="w-3 h-3 rounded-full bg-[#FF5F57]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FEBC2E]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#28C840]"></span>
+              <span class="ml-auto text-xs font-mono" style="color:#8B949E">portfolio.py</span>
+            </div>
+
+            <!-- Code content -->
+            <div class="px-5 py-5 font-mono text-sm leading-7" style="color:#C9D1D9">
+              <div><span style="color:#8B949E"># portfolio.py</span></div>
+              <div class="mt-1">
+                <span style="color:#FF7B72">class</span>
+                <span style="color:#79C0FF"> MatíasVía</span>
+                <span>:</span>
+              </div>
+              <div class="ml-4">
+                <span style="color:#79C0FF">role</span>
+                <span>  = </span>
+                <span style="color:#A5D6FF">"Analista en Sistemas"</span>
+              </div>
+              <div class="ml-4">
+                <span style="color:#79C0FF">stack</span>
+                <span> = [</span>
+                <span style="color:#A5D6FF">"Python"</span>
+                <span>, </span>
+                <span style="color:#A5D6FF">"C#"</span>
+                <span>, </span>
+                <span style="color:#A5D6FF">"React"</span>
+                <span>]</span>
+              </div>
+              <div class="ml-4 mt-1">
+                <span style="color:#79C0FF">passion</span>
+                <span> = </span>
+                <span style="color:#A5D6FF">"Dev + IA"</span>
+              </div>
+              <div class="mt-3 ml-4">
+                <span style="color:#FF7B72">def</span>
+                <span style="color:#D2A8FF"> build</span>
+                <span>(</span>
+                <span style="color:#FFA657">self</span>
+                <span>, </span>
+                <span style="color:#FFA657">idea</span>
+                <span>: </span>
+                <span style="color:#79C0FF">str</span>
+                <span>) -&gt; </span>
+                <span style="color:#79C0FF">Solution</span>
+                <span>:</span>
+              </div>
+              <div class="ml-8">
+                <span style="color:#FF7B72">return</span>
+                <span> self.deliver(</span>
+              </div>
+              <div class="ml-12">
+                <span>self.develop(idea)</span>
+              </div>
+              <div class="ml-8"><span>)</span></div>
+              <div class="mt-3">
+                <span style="color:#8B949E"># status: open_to_work ✓</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating badge: disponibilidad -->
+          <div class="absolute -bottom-5 -left-6 px-4 py-2.5 rounded-xl border text-xs font-medium flex items-center gap-2 shadow-[var(--sh-md)]"
+            style="background:var(--bg-card); border-color:var(--border); color:var(--text-1)">
+            <span class="w-2 h-2 rounded-full bg-[var(--green)] animate-pulse"></span>
+            Abierto a propuestas
+          </div>
+
+          <!-- Floating badge: UTN -->
+          <div class="absolute -top-5 -right-4 px-3.5 py-2 rounded-xl border text-xs font-medium shadow-[var(--sh-md)]"
+            style="background:var(--bg-card); border-color:var(--border); color:var(--text-2)">
+            🎓 UTN · FRC
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- Indicador de scroll -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-    <a href="#about" class="animate-bounce">
-      <svg class="w-6 h-6 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
-    </a>
-  </div>
+  <!-- Scroll hint -->
+  <a href="#about"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-3)] hover:text-[var(--accent)] transition-colors duration-200 animate-bounce"
+    aria-label="Ir a Sobre mí">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </a>
 </section>
-
-<style>
-  @reference "../styles/global.css";
-
-  .social-link {
-    @apply text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800;
-  }
-
-  @keyframes blob {
-    0% {
-      transform: translate(0px, 0px) scale(1);
-    }
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
-    100% {
-      transform: translate(0px, 0px) scale(1);
-    }
-  }
-
-  .animate-blob {
-    animation: blob 7s infinite;
-  }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-</style>
-
-<script>
-  // Efecto de escritura para el título
-  document.addEventListener('DOMContentLoaded', () => {
-    const typewriterEl = document.getElementById('typewriter');
-
-    if (!(typewriterEl instanceof HTMLElement)) {
-      return;
-    }
-
-    const typewriter: HTMLElement = typewriterEl;
-
-    const titles = [
-      'Software Developer',
-      'Web Developer',
-      'Analista en Sistemas',
-      'Apasionado por la inteligencia artificial'
-    ];
-
-    let titleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typeSpeed = 100;
-
-    function type() {
-      const currentTitle = titles[titleIndex];
-      
-      if (isDeleting) {
-        typewriter.textContent = currentTitle.substring(0, charIndex - 1);
-        charIndex--;
-        typeSpeed = 50;
-      } else {
-        typewriter.textContent = currentTitle.substring(0, charIndex + 1);
-        charIndex++;
-        typeSpeed = 100;
-      }
-
-      if (!isDeleting && charIndex === currentTitle.length) {
-        typeSpeed = 2000; // Pausa al final
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        titleIndex = (titleIndex + 1) % titles.length;
-        typeSpeed = 500; // Pausa antes de escribir el siguiente
-      }
-
-      setTimeout(type, typeSpeed);
-    }
-
-    type();
-  });
-</script>

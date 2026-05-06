@@ -1,75 +1,106 @@
 ---
 import "../styles/global.css";
-
 export interface Props {
-	title?: string;
-	description?: string;
+  title?: string;
+  description?: string;
 }
-
-const { 
-	title = "Portfolio - Matías Vía", 
-	description = "Estudiante avanzado de Analista en Sistemas orientado al desarrollo y la inteligencia artificial" 
+const {
+  title = "Portfolio — Matías Vía",
+  description = "Analista en Sistemas, desarrollador freelance y entusiasta de la inteligencia artificial. Córdoba, Argentina.",
 } = Astro.props;
 ---
-
 <!doctype html>
-<html lang="es" class="dark">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content={description} />
-		<meta name="author" content="Matías Vía" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		
-		<!-- Twitter -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		
-		<!-- 🌙 Script de tema (modo oscuro por defecto) -->
-		<script is:inline>
-			try {
-				// Si no hay tema guardado, iniciar siempre en modo oscuro
-				if (!("theme" in localStorage)) {
-					localStorage.theme = "dark";
-				}
-				// Aplicar clase dark antes de que cargue la UI
-				const isDark = localStorage.theme === "dark";
-				document.documentElement.classList.toggle("dark", isDark);
-			} catch (error) {
-				console.error("Error aplicando el tema:", error);
-				document.documentElement.classList.add("dark");
-			}
-		</script>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Matías Vía" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
 
-		<title>{title}</title>
-	</head>
+    <!-- Fonts: DM Sans (body) + Syne (display) + JetBrains Mono (code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-	<body class="bg-gray-900 text-gray-100 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
-		<slot />
-	</body>
+    <!-- Default: dark mode -->
+    <script is:inline>
+      try {
+        const t = localStorage.theme;
+        if (t === "light") document.documentElement.classList.remove("dark");
+        else { document.documentElement.classList.add("dark"); if (!t) localStorage.theme = "dark"; }
+      } catch(e) { document.documentElement.classList.add("dark"); }
+    </script>
+
+    <title>{title}</title>
+  </head>
+
+  <body class="bg-[var(--bg)] text-[var(--text-1)] transition-colors duration-300">
+    <slot />
+
+    <!-- Custom cursor (only rendered on pointer devices via CSS) -->
+    <div id="c-dot"  aria-hidden="true"></div>
+    <div id="c-ring" aria-hidden="true"></div>
+
+    <script is:inline>
+      (function () {
+        // Only run on devices with a fine pointer (mouse/trackpad)
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+        var dot  = document.getElementById("c-dot");
+        var ring = document.getElementById("c-ring");
+        var html = document.documentElement;
+        if (!dot || !ring) return;
+
+        var mx = 0, my = 0, rx = 0, ry = 0;
+
+        // Dot follows cursor immediately
+        document.addEventListener("mousemove", function (e) {
+          mx = e.clientX;
+          my = e.clientY;
+          dot.style.left = mx + "px";
+          dot.style.top  = my + "px";
+        }, { passive: true });
+
+        // Ring follows with lerp lag
+        (function loop() {
+          rx += (mx - rx) * 0.13;
+          ry += (my - ry) * 0.13;
+          ring.style.left = rx.toFixed(2) + "px";
+          ring.style.top  = ry.toFixed(2) + "px";
+          requestAnimationFrame(loop);
+        })();
+
+        // Hide when mouse leaves window
+        document.addEventListener("mouseleave", function () { html.classList.add("c-out"); });
+        document.addEventListener("mouseenter", function () { html.classList.remove("c-out"); });
+
+        // Hover state detection
+        document.addEventListener("mouseover", function (e) {
+          var el = e.target;
+          var isText = el && (
+            el.tagName === "INPUT" && ["text","email","search","url","tel","password"].includes(el.type) ||
+            el.tagName === "TEXTAREA"
+          );
+          var isClickable = el && (el.closest("a, button, [role='button'], label, select") !== null);
+
+          html.classList.toggle("c-text",  !!isText);
+          html.classList.toggle("c-hover", !isText && !!isClickable);
+        });
+
+        // Click feedback
+        document.addEventListener("mousedown", function () { html.classList.add("c-click"); });
+        document.addEventListener("mouseup",   function () { html.classList.remove("c-click"); });
+      })();
+    </script>
+  </body>
 </html>
-
-<style>
-	html {
-		scroll-behavior: smooth;
-	}
-	
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		min-height: 100vh;
-	}
-	
-	body {
-		font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-		line-height: 1.6;
-	}
-</style>

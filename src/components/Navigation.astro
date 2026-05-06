@@ -1,109 +1,143 @@
 ---
-/* Componente de navegación principal */
 ---
+<header
+  id="navbar"
+  class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
       <!-- Logo -->
-      <div class="shrink-0">
-        <a href="#home" class="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-          Matías Vía
+      <a href="#home" class="group flex items-center gap-2.5" aria-label="Inicio">
+        <div class="w-8 h-8 rounded-lg border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] text-xs font-medium tracking-wide font-display transition-all duration-200 group-hover:bg-[var(--accent)] group-hover:text-white group-hover:shadow-[0_0_16px_var(--accent-ring)]">
+          MV
+        </div>
+        <span class="text-sm font-medium text-[var(--text-1)] hidden sm:block">Matías Vía</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-0.5">
+        <a href="#about"          class="nav-link">Sobre mí</a>
+        <a href="#projects"       class="nav-link">Proyectos</a>
+        <a href="#skills"         class="nav-link">Stack</a>
+        <a href="#certifications" class="nav-link">Certs</a>
+        <a href="#contact" class="ml-4 px-4 py-1.5 text-sm font-medium text-[var(--accent)] border border-[var(--accent)] rounded-lg transition-all duration-200 hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_20px_var(--accent-ring)]">
+          Contacto
         </a>
       </div>
 
-      <!-- Enlaces Desktop -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-8">
-          <a href="#home" class="nav-link">Inicio</a>
-          <a href="#about" class="nav-link">Sobre mí</a>
-          <a href="#projects" class="nav-link">Proyectos</a>
-          <a href="#skills" class="nav-link">Habilidades</a>
-          <a href="#contact" class="nav-link">Contacto</a>
-        </div>
-      </div>
-
-      <!-- Botones: Tema + Menú móvil -->
-      <div class="flex items-center space-x-4">
-        <!-- Toggle de tema -->
-        <button
-          id="theme-toggle"
-          class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-          aria-label="Cambiar tema"
-        >
-          <!-- Ícono para modo oscuro (luna) -->
-          <svg id="theme-toggle-dark-icon" class="w-5 h-5 transition-all duration-300 absolute" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+      <!-- Controls -->
+      <div class="flex items-center gap-1.5">
+        <!-- Theme toggle -->
+        <button id="theme-toggle" class="control-btn" aria-label="Cambiar tema">
+          <svg id="icon-moon" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
           </svg>
-          <!-- Ícono para modo claro (sol) -->
-          <svg id="theme-toggle-light-icon" class="w-5 h-5 transition-all duration-300 opacity-0" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+          <svg id="icon-sun" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
           </svg>
         </button>
 
-        <!-- Botón menú móvil -->
-        <button
-          id="mobile-menu-button"
-          class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-          aria-label="Abrir menú"
-        >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <!-- Mobile menu button -->
+        <button id="menu-btn" class="md:hidden control-btn" aria-label="Menú">
+          <svg id="icon-menu" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
       </div>
     </div>
 
-    <!-- Menú móvil -->
-    <div id="mobile-menu" class="md:hidden hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-        <a href="#home" class="mobile-nav-link">Inicio</a>
-        <a href="#about" class="mobile-nav-link">Sobre mí</a>
-        <a href="#projects" class="mobile-nav-link">Proyectos</a>
-        <a href="#skills" class="mobile-nav-link">Habilidades</a>
-        <a href="#contact" class="mobile-nav-link">Contacto</a>
-      </div>
+    <!-- Mobile menu -->
+    <div
+      id="mobile-menu"
+      class="md:hidden hidden border-t border-[var(--border-soft)] mt-0 py-4 space-y-1"
+    >
+      <a href="#about"          class="mobile-link">Sobre mí</a>
+      <a href="#projects"       class="mobile-link">Proyectos</a>
+      <a href="#skills"         class="mobile-link">Stack técnico</a>
+      <a href="#certifications" class="mobile-link">Certificaciones</a>
+      <a href="#contact"        class="mt-3 block mx-4 py-2.5 text-sm font-medium text-center text-[var(--accent)] border border-[var(--accent)] rounded-lg hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">
+        Contacto
+      </a>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <style>
   @reference "../styles/global.css";
 
   .nav-link {
-    @apply text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+    @apply px-3 py-1.5 text-sm rounded-lg transition-colors duration-200
+           text-[var(--text-2)] hover:text-[var(--text-1)] hover:bg-[var(--bg-muted)];
   }
-
-  .mobile-nav-link {
-    @apply text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 block px-3 py-2 rounded-md text-base font-medium transition-colors;
+  .control-btn {
+    @apply p-2 rounded-lg text-[var(--text-2)] hover:text-[var(--text-1)]
+           hover:bg-[var(--bg-muted)] transition-colors duration-200;
+  }
+  .mobile-link {
+    @apply block px-4 py-2.5 text-sm text-[var(--text-2)] hover:text-[var(--text-1)]
+           hover:bg-[var(--bg-muted)] rounded-lg transition-colors duration-200;
   }
 </style>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const root = document.documentElement;
-    const toggle = document.getElementById("theme-toggle");
-    const darkIcon = document.getElementById("theme-toggle-dark-icon");
-    const lightIcon = document.getElementById("theme-toggle-light-icon");
-
-    // Función: actualiza íconos según estado
-    function updateIcons(isDark) {
-      darkIcon.classList.toggle("opacity-0", isDark);
-      darkIcon.classList.toggle("rotate-90", isDark);
-      lightIcon.classList.toggle("opacity-0", !isDark);
-      lightIcon.classList.toggle("-rotate-90", !isDark);
+  /* ── Scroll-aware glass nav ── */
+  const navbar = document.getElementById("navbar");
+  function updateNav() {
+    if (window.scrollY > 40) {
+      navbar.style.background = "color-mix(in srgb, var(--bg-card) 88%, transparent)";
+      navbar.style.backdropFilter = "blur(16px)";
+      navbar.style.borderBottom = "1px solid var(--border-soft)";
+      navbar.style.boxShadow = "var(--sh-sm)";
+    } else {
+      navbar.style.background = "transparent";
+      navbar.style.backdropFilter = "none";
+      navbar.style.borderBottom = "none";
+      navbar.style.boxShadow = "none";
     }
+  }
+  window.addEventListener("scroll", updateNav, { passive: true });
+  updateNav();
 
-    // Obtener estado inicial
-    const isDark = root.classList.contains("dark");
-    updateIcons(isDark);
+  /* ── Theme toggle ── */
+  const root  = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
+  const moon  = document.getElementById("icon-moon");
+  const sun   = document.getElementById("icon-sun");
 
-    // Evento de click
-    toggle.addEventListener("click", () => {
-      const newDark = !root.classList.contains("dark");
-      root.classList.toggle("dark", newDark);
-      localStorage.theme = newDark ? "dark" : "light";
-      updateIcons(newDark);
+  function syncIcons(isDark) {
+    moon.classList.toggle("hidden",  isDark);
+    sun.classList.toggle("hidden",  !isDark);
+  }
+  syncIcons(root.classList.contains("dark"));
+
+  toggle.addEventListener("click", () => {
+    const nowDark = !root.classList.contains("dark");
+    root.classList.toggle("dark", nowDark);
+    localStorage.theme = nowDark ? "dark" : "light";
+    syncIcons(nowDark);
+  });
+
+  /* ── Mobile menu ── */
+  const menuBtn   = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const iconMenu  = document.getElementById("icon-menu");
+  const iconClose = document.getElementById("icon-close");
+
+  menuBtn.addEventListener("click", () => {
+    const open = mobileMenu.classList.toggle("hidden");
+    iconMenu.classList.toggle("hidden",  !open);
+    iconClose.classList.toggle("hidden",  open);
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      iconMenu.classList.remove("hidden");
+      iconClose.classList.add("hidden");
     });
   });
 </script>
