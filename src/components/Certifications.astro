@@ -3,6 +3,7 @@ import jsCert      from '../assets/certificaciones/javascript-coderhouse.png';
 import csharpCert  from '../assets/certificaciones/poo-csharp.jpg';
 import wpCert      from '../assets/certificaciones/wordpress-woocommerce.jpg';
 import britishCert from '../assets/certificaciones/britishschool-english-2.pdf';
+import udemyCert   from '../assets/certificaciones/UC-fdf953d1-7ec6-44f2-b35e-90e302c07dbf.jpg';
 
 const certs = [
   {
@@ -153,6 +154,35 @@ const certs = [
       <text x="218" y="146" font-family="Arial, sans-serif" font-size="9" fill="#93C5FD">B1 · Intermedio</text>
       <!-- bottom -->
       <text x="18" y="165" font-family="Arial, sans-serif" font-size="9" fill="#4B5563">British School · Córdoba · 2023</text>
+    </svg>`,
+  },
+  {
+    title: "Certificación Udemy",
+    issuer: "Udemy",
+    date: "2024",
+    type: "image" as const,
+    file: udemyCert.src,
+    desc: "Curso completado en plataforma Udemy",
+    glowColor: "#A435F0",
+    illustration: `<svg viewBox="0 0 320 176" xmlns="http://www.w3.org/2000/svg">
+      <rect width="320" height="176" fill="#1A0A2E"/>
+      <rect width="320" height="176" fill="url(#udmygrid)" opacity="0.05"/>
+      <defs>
+        <pattern id="udmygrid" width="24" height="24" patternUnits="userSpaceOnUse">
+          <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#A435F0" stroke-width="0.4"/>
+        </pattern>
+      </defs>
+      <circle cx="240" cy="88" r="64" fill="#A435F0" opacity="0.08"/>
+      <circle cx="240" cy="88" r="48" fill="#A435F0" opacity="0.07"/>
+      <text x="194" y="116" font-family="Arial Black, sans-serif" font-size="52" font-weight="900" fill="#A435F0" opacity="0.9">U</text>
+      <rect x="22" y="48" width="140" height="14" rx="3" fill="#2D1A50" opacity="0.7"/>
+      <text x="30" y="59" font-family="sans-serif" font-size="9" fill="#D8B4FE">Certificado de finalizacion</text>
+      <rect x="22" y="70" width="100" height="8" rx="2" fill="#3D2060" opacity="0.6"/>
+      <rect x="22" y="84" width="120" height="8" rx="2" fill="#3D2060" opacity="0.5"/>
+      <rect x="22" y="98" width="80" height="8" rx="2" fill="#3D2060" opacity="0.4"/>
+      <rect x="22" y="120" width="130" height="18" rx="9" fill="#A435F0" opacity="0.25" stroke="#A435F0" stroke-width="0.8"/>
+      <text x="87" y="132" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#D8B4FE">Udemy · 2024</text>
+      <text x="22" y="162" font-family="sans-serif" font-size="9" fill="#6B21A8" opacity="0.7">udemy.com</text>
     </svg>`,
   },
 ];
