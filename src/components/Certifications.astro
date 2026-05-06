@@ -1,20 +1,73 @@
 ---
-import jsCert    from '../assets/certificaciones/javascript-coderhouse.png';
-import csharpCert from '../assets/certificaciones/poo-csharp.jpg';
-import wpCert    from '../assets/certificaciones/wordpress-woocommerce.jpg';
+import jsCert      from '../assets/certificaciones/javascript-coderhouse.png';
+import csharpCert  from '../assets/certificaciones/poo-csharp.jpg';
+import wpCert      from '../assets/certificaciones/wordpress-woocommerce.jpg';
 import britishCert from '../assets/certificaciones/britishschool-english-2.pdf';
 
 const certs = [
-  { title: "JavaScript — Desarrollo Web", issuer: "CoderHouse",          date: "2024", type: "image", file: jsCert.src,    desc: "JS moderno, DOM, asincronismo y buenas prácticas" },
-  { title: "POO — C# & .NET",             issuer: "Curso especializado", date: "2024", type: "image", file: csharpCert.src, desc: "Programación orientada a objetos con C# y .NET" },
-  { title: "WordPress & WooCommerce",     issuer: "Desarrollo Web",      date: "2024", type: "image", file: wpCert.src,     desc: "E-commerce, contenidos y personalización avanzada" },
-  { title: "English II — Intensive",      issuer: "British School",      date: "2023", type: "pdf",   file: britishCert,    desc: "Nivel básico/intermedio certificado" },
+  {
+    title: "JavaScript — Desarrollo Web",
+    issuer: "CoderHouse",
+    date: "2024",
+    type: "image" as const,
+    file: jsCert.src,
+    desc: "JS moderno, DOM, asincronismo y buenas prácticas",
+    // Visual identity
+    iconSvg: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="56" height="56" rx="10" fill="#F7DF1E"/>
+      <text x="6" y="46" font-family="monospace" font-size="28" font-weight="bold" fill="#1a1a1a">JS</text>
+    </svg>`,
+    gradient: "radial-gradient(ellipse at 20% 60%, #F7DF1E30 0%, transparent 55%), radial-gradient(ellipse at 85% 15%, #FBBF2420 0%, transparent 50%), radial-gradient(ellipse at 60% 90%, #F59E0B15 0%, transparent 45%)",
+    glowColor: "#F7DF1E",
+  },
+  {
+    title: "POO — C# & .NET",
+    issuer: "Curso especializado",
+    date: "2024",
+    type: "image" as const,
+    file: csharpCert.src,
+    desc: "Programación orientada a objetos con C# y .NET",
+    iconSvg: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="56" height="56" rx="10" fill="#9B59B6"/>
+      <text x="5" y="44" font-family="monospace" font-size="26" font-weight="bold" fill="white">C#</text>
+    </svg>`,
+    gradient: "radial-gradient(ellipse at 25% 55%, #7C3AED28 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, #A855F720 0%, transparent 50%), radial-gradient(ellipse at 50% 85%, #9B59B615 0%, transparent 45%)",
+    glowColor: "#A855F7",
+  },
+  {
+    title: "WordPress & WooCommerce",
+    issuer: "Desarrollo Web",
+    date: "2024",
+    type: "image" as const,
+    file: wpCert.src,
+    desc: "E-commerce, contenidos y personalización avanzada",
+    iconSvg: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="56" height="56" rx="10" fill="#21759B"/>
+      <text x="5" y="44" font-family="monospace" font-size="26" font-weight="bold" fill="white">WP</text>
+    </svg>`,
+    gradient: "radial-gradient(ellipse at 30% 50%, #21759B28 0%, transparent 55%), radial-gradient(ellipse at 75% 20%, #3B82F620 0%, transparent 50%), radial-gradient(ellipse at 55% 85%, #0EA5E918 0%, transparent 45%)",
+    glowColor: "#3B82F6",
+  },
+  {
+    title: "English II — Intensive",
+    issuer: "British School",
+    date: "2023",
+    type: "pdf" as const,
+    file: britishCert,
+    desc: "Certificación de nivel básico / intermedio",
+    iconSvg: `<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="56" height="56" rx="10" fill="#059669"/>
+      <text x="7" y="44" font-family="monospace" font-size="26" font-weight="bold" fill="white">EN</text>
+    </svg>`,
+    gradient: "radial-gradient(ellipse at 25% 55%, #05966928 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, #10B98120 0%, transparent 50%), radial-gradient(ellipse at 55% 85%, #34D39918 0%, transparent 45%)",
+    glowColor: "#10B981",
+  },
 ];
 
 const achievements = [
-  { title: "Autoclinic · Gestión de talleres", ctx: "Seminario académico",  year: "2025", desc: "Sistema de gestión para talleres mecánicos con turnos, clientes y vehículos." },
-  { title: "Sistema de ventas Python",          ctx: "Freelance",            year: "2024", desc: "App de escritorio para panadería con facturas PDF y reportes automatizados." },
-  { title: "GoGo Travel · Landing",            ctx: "Freelance",            year: "2023", desc: "Landing WordPress para agencia de viajes con SEO y formularios optimizados." },
+  { title: "Autoclinic · Gestión de talleres", ctx: "Seminario académico", year: "2025", desc: "Sistema de gestión para talleres mecánicos con turnos, clientes y vehículos." },
+  { title: "Sistema de ventas Python",         ctx: "Freelance",           year: "2024", desc: "App de escritorio para panadería con facturas PDF y reportes automatizados." },
+  { title: "GoGo Travel · Landing",           ctx: "Freelance",           year: "2023", desc: "Landing WordPress para agencia de viajes con SEO y formularios optimizados." },
 ];
 ---
 
@@ -36,25 +89,47 @@ const achievements = [
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
       {certs.map((c, i) => (
         <div
-          class="group rounded-2xl border overflow-hidden transition-all duration-200 hover:border-[var(--accent)] hover:shadow-[var(--sh-md)] animate-fade-up"
+          class="cert-card group rounded-2xl border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--sh-lg)] hover:-translate-y-1 animate-fade-up cursor-pointer open-cert"
           style={`background:var(--bg-card); border-color:var(--border); animation-delay:${i * 0.08}s`}
+          data-file={c.file} data-title={c.title} data-type={c.type}
         >
-          <!-- Preview -->
-          <div class="relative h-36 overflow-hidden" style="background:var(--bg-muted)">
-            {c.type === 'image' ? (
-              <img src={c.file} alt={c.title}
-                class="w-full h-full object-cover cursor-pointer open-cert group-hover:scale-105 transition-transform duration-300"
-                data-file={c.file} data-title={c.title} data-type="image"/>
-            ) : (
-              <div class="w-full h-full flex flex-col items-center justify-center gap-2 cursor-pointer open-cert transition-colors duration-200 hover:text-[var(--accent)]"
-                style="color:var(--text-3)"
-                data-file={c.file} data-title={c.title} data-type="pdf">
-                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-                <span class="text-xs">Ver PDF</span>
-              </div>
-            )}
+
+          <!-- ── Visual preview ── -->
+          <div class="cert-preview relative h-44 overflow-hidden flex items-center justify-center"
+            style={`background:var(--bg-muted); --glow:${c.glowColor}`}>
+
+            <!-- Mesh gradient background -->
+            <div class="absolute inset-0" style={`background:${c.gradient}`}></div>
+
+            <!-- Dot grid pattern -->
+            <div class="absolute inset-0 dot-grid"></div>
+
+            <!-- Glow orb -->
+            <div class="absolute w-32 h-32 rounded-full blur-2xl opacity-20 group-hover:opacity-35 transition-opacity duration-500"
+              style={`background:${c.glowColor}; top:50%; left:50%; transform:translate(-50%,-50%)`}></div>
+
+            <!-- Icon -->
+            <div class="relative z-10 cert-icon group-hover:scale-110 transition-transform duration-300 drop-shadow-lg"
+              style={`filter: drop-shadow(0 0 16px ${c.glowColor}60)`}
+              set:html={c.iconSvg}>
+            </div>
+
+            <!-- Shimmer sweep on hover -->
+            <div class="cert-shimmer absolute inset-0 pointer-events-none"></div>
+
+            <!-- Type badge -->
+            <div class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-medium border backdrop-blur-sm"
+              style="background:rgba(0,0,0,0.3); border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.7)">
+              {c.type === 'pdf' ? 'PDF' : 'Imagen'}
+            </div>
+
+            <!-- "Ver cert" overlay on hover -->
+            <div class="absolute inset-0 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm"
+                style="background:rgba(0,0,0,0.45); color:white; border:1px solid rgba(255,255,255,0.2)">
+                Ver certificación →
+              </span>
+            </div>
           </div>
 
           <!-- Info -->
@@ -63,27 +138,21 @@ const achievements = [
               <h3 class="text-xs font-medium leading-snug" style="color:var(--text-1)">{c.title}</h3>
               <span class="text-xs shrink-0 tabular-nums" style="color:var(--text-3)">{c.date}</span>
             </div>
-            <p class="text-xs mb-2" style="color:var(--accent)">{c.issuer}</p>
-            <p class="text-xs leading-relaxed mb-3" style="color:var(--text-3)">{c.desc}</p>
-            <button
-              class="w-full py-1.5 text-xs font-medium rounded-lg border transition-all duration-200 hover:bg-[var(--accent-bg)] hover:border-[var(--accent)] hover:text-[var(--accent)] open-cert"
-              style="border-color:var(--border); color:var(--text-2)"
-              data-file={c.file} data-title={c.title} data-type={c.type}>
-              Ver certificación
-            </button>
+            <p class="text-xs mb-1.5" style={`color:${c.glowColor}`}>{c.issuer}</p>
+            <p class="text-xs leading-relaxed" style="color:var(--text-3)">{c.desc}</p>
           </div>
         </div>
       ))}
     </div>
 
     <!-- Achievements -->
-    <div class="mb-2">
+    <div>
       <h3 class="text-sm font-medium mb-5" style="color:var(--text-1)">Proyectos destacados</h3>
       <div class="grid sm:grid-cols-3 gap-4">
         {achievements.map((a, i) => (
           <div
             class="p-5 rounded-2xl border transition-colors duration-200 hover:border-[var(--accent)] animate-fade-up"
-            style={`background:var(--bg-muted); border-color:var(--border); animation-delay:${i * 0.1 + 0.2}s`}
+            style={`background:var(--bg-muted); border-color:var(--border); animation-delay:${i * 0.1 + 0.3}s`}
           >
             <div class="flex items-center justify-between mb-2">
               <h4 class="text-sm font-medium" style="color:var(--text-1)">{a.title}</h4>
@@ -101,15 +170,14 @@ const achievements = [
 
 <!-- Modal -->
 <div id="certModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4"
-  style="background:rgba(0,0,0,0.7); backdrop-filter:blur(6px)">
+  style="background:rgba(0,0,0,0.75); backdrop-filter:blur(8px)">
   <div class="w-full max-w-4xl max-h-[90vh] rounded-2xl border overflow-hidden flex flex-col"
     style="background:var(--bg-card); border-color:var(--border)">
     <div class="flex items-center justify-between px-5 py-4 border-b shrink-0" style="border-color:var(--border-soft)">
       <h3 id="modalTitle" class="text-sm font-medium" style="color:var(--text-1)"></h3>
-      <button id="closeModalBtn" class="p-1.5 rounded-lg transition-colors duration-200"
+      <button id="closeModalBtn"
+        class="p-1.5 rounded-lg transition-colors duration-200 hover:bg-[var(--bg-muted)]"
         style="color:var(--text-3)"
-        onmouseenter="this.style.background='var(--bg-muted)'"
-        onmouseleave="this.style.background='transparent'"
         aria-label="Cerrar">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -120,32 +188,76 @@ const achievements = [
   </div>
 </div>
 
+<style>
+  /* Dot grid overlay */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.6;
+  }
+
+  /* Shimmer sweep */
+  .cert-shimmer {
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.06) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    transition: background-position 0s;
+  }
+  .cert-card:hover .cert-shimmer {
+    background-position: -200% 0;
+    transition: background-position 0.6s ease;
+  }
+
+  /* Icon sizing */
+  .cert-icon svg {
+    width: 56px;
+    height: 56px;
+  }
+</style>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     function openModal(file: string, title: string, type: 'image' | 'pdf') {
-      const modal   = document.getElementById('certModal');
-      const mTitle  = document.getElementById('modalTitle');
-      const mContent= document.getElementById('modalContent');
+      const modal    = document.getElementById('certModal');
+      const mTitle   = document.getElementById('modalTitle');
+      const mContent = document.getElementById('modalContent');
       if (!modal || !mTitle || !mContent) return;
 
       mTitle.textContent = title;
+
       if (type === 'image') {
         mContent.innerHTML = `<img src="${file}" alt="${title}" class="w-full h-auto rounded-xl">`;
       } else {
         mContent.innerHTML = `
           <div>
             <div class="mb-3 flex justify-end">
-              <a href="${file}" target="_blank" rel="noopener" class="text-xs px-3 py-1.5 rounded-lg border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors" style="border-color:var(--border);color:var(--text-2)">Abrir en nueva pestaña</a>
+              <a href="${file}" target="_blank" rel="noopener"
+                class="text-xs px-3 py-1.5 rounded-lg border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                style="border-color:var(--border); color:var(--text-2)">
+                Abrir en nueva pestaña
+              </a>
             </div>
-            <iframe src="${file}#toolbar=1" class="w-full rounded-xl border" style="height:65vh;border-color:var(--border)" title="${title}"></iframe>
+            <iframe src="${file}#toolbar=1" class="w-full rounded-xl border"
+              style="height:65vh; border-color:var(--border)" title="${title}"></iframe>
             <div class="mt-4 text-center">
-              <a href="${file}" download class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-medium text-white transition-opacity hover:opacity-90" style="background:var(--accent)">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <a href="${file}" download
+                class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-medium text-white hover:opacity-90 transition-opacity"
+                style="background:var(--accent)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
                 Descargar PDF
               </a>
             </div>
           </div>`;
       }
+
       modal.classList.remove('hidden');
       modal.classList.add('flex');
     }
