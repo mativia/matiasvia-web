@@ -1,50 +1,69 @@
 ---
-const cats = [
+// Stack principal — lo que usé en proyectos reales
+const mainStack = [
   {
-    title: "Lenguajes & Backend",
-    color: "#60A5FA",
-    skills: [
-      { name: "C# · ASP.NET · EF", level: 90 },
-      { name: "Java · Spring · Hibernate", level: 75 },
-      { name: "JavaScript", level: 70 },
-      { name: "Python · Django · Flask", level: 65 },
-      { name: "SQL · MySQL · PostgreSQL", level: 50 },
-    ],
+    name: "Python",
+    sub: "Tkinter · SQLite · automatización",
+    icon: "Py",
+    iconBg: "#3B82F6",
+    tag: "En producción",
+    tagColor: "green",
+    desc: "Desarrollé un sistema de gestión de ventas para un cliente real: registro de ventas, facturas PDF y reportes semanales automáticos con Tkinter + SQLite.",
   },
   {
-    title: "Frontend & CMS",
-    color: "#A78BFA",
-    skills: [
-      { name: "HTML / CSS · Tailwind", level: 90 },
-      { name: "React", level: 86 },
-      { name: "Astro", level: 70 },
-      { name: "WordPress · WooCommerce", level: 90 },
-      { name: "UI / UX", level: 70 },
-    ],
+    name: "WordPress & WooCommerce",
+    sub: "PHP · Elementor · child themes · SEO",
+    icon: "WP",
+    iconBg: "#21759B",
+    tag: "3 proyectos freelance",
+    tagColor: "green",
+    desc: "E-commerce con pagos integrados (Osaka), landing de conversión (GoGo Travel) y tienda de indumentaria (Quantum Sports). Todos en producción.",
   },
   {
-    title: "Análisis de Sistemas",
-    color: "#34D399",
-    skills: [
-      { name: "Captura de requerimientos", level: 95 },
-      { name: "Modelado UML & BPMN", level: 90 },
-      { name: "Análisis funcional", level: 90 },
-      { name: "Procesos organizacionales", level: 80 },
-      { name: "Comunicación efectiva", level: 85 },
-    ],
+    name: "C# & ASP.NET",
+    sub: "WinForms · MySQL · Entity Framework",
+    icon: "C#",
+    iconBg: "#7C3AED",
+    tag: "Académico + personal",
+    tagColor: "blue",
+    desc: "Sistema de gestión de talleres (Autoclinic) y sistema de reservas aéreas (AirCor) con arquitectura MVC, base de datos relacional y UI de escritorio.",
   },
   {
-    title: "Herramientas & Metodologías",
-    color: "#FB923C",
-    skills: [
-      { name: "Git · GitHub · GitLab", level: 100 },
-      { name: "Scrum", level: 92 },
-      { name: "Jira", level: 100 },
-      { name: "IA aplicada · Prompt Eng.", level: 86 },
-      { name: "Docker", level: 60 },
-    ],
+    name: "HTML · CSS · Tailwind",
+    sub: "Diseño responsive · componentes · UI",
+    icon: "</>",
+    iconBg: "#E34F26",
+    tag: "Todos mis proyectos",
+    tagColor: "orange",
+    desc: "Base de todas mis interfaces web. Domino layouts responsive, Tailwind CSS, y construí este portfolio con Astro + Tailwind v4.",
   },
 ];
+
+// Skills complementarios — los usé, pero no son mi foco principal
+const secondary = [
+  { name: "React",        note: "Proyectos personales" },
+  { name: "JavaScript",  note: "En todos mis webs"    },
+  { name: "SQL / MySQL", note: "En producción"        },
+  { name: "Astro",       note: "Este portfolio"       },
+  { name: "Java",        note: "Académico"            },
+  { name: "Git",         note: "En todos mis proyectos"},
+];
+
+// Metodología y herramientas — lo que sé usar para trabajar en equipo
+const tools = [
+  { label: "Scrum",                icon: "🔄" },
+  { label: "Git colaborativo",     icon: "🌿" },
+  { label: "Jira",                 icon: "📋" },
+  { label: "IA aplicada",          icon: "🤖" },
+  { label: "UML & BPMN",          icon: "📐" },
+  { label: "Documentación técnica",icon: "📝" },
+];
+
+const tagStyles: Record<string, string> = {
+  green:  "color:#059669; background:color-mix(in srgb,#059669 10%,transparent); border-color:color-mix(in srgb,#059669 30%,transparent)",
+  blue:   "color:#3B82F6; background:color-mix(in srgb,#3B82F6 10%,transparent); border-color:color-mix(in srgb,#3B82F6 30%,transparent)",
+  orange: "color:#F59E0B; background:color-mix(in srgb,#F59E0B 10%,transparent); border-color:color-mix(in srgb,#F59E0B 30%,transparent)",
+};
 ---
 
 <section id="skills" class="py-24 sm:py-32" style="background:var(--bg)">
@@ -52,107 +71,110 @@ const cats = [
 
     <!-- Header -->
     <div class="mb-14 animate-fade-up">
-      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">Qué sé hacer</p>
+      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">Stack técnico</p>
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold" style="color:var(--text-1)">
-        Stack técnico
+        En qué soy bueno
       </h2>
-      <p class="mt-4 text-sm sm:text-base max-w-xl" style="color:var(--text-2)">
-        Tecnologías con las que trabajo a diario en proyectos reales — no solo en cursos.
+      <p class="mt-4 text-sm sm:text-base max-w-xl leading-relaxed" style="color:var(--text-2)">
+        Me especializo en pocas cosas y las hago bien. Acá está mi stack real,
+        separando lo que usé en producción de lo que practiqué en la facultad.
       </p>
     </div>
 
-    <!-- Skills grid -->
-    <div class="grid sm:grid-cols-2 gap-5 mb-10">
-      {cats.map((cat, ci) => (
-        <div
-          class="rounded-2xl border p-6 animate-fade-up"
-          style={`background:var(--bg-card); border-color:var(--border); animation-delay:${ci * 0.1}s`}
-        >
-          <!-- Category header -->
-          <div class="flex items-center gap-3 mb-5 pb-4 border-b" style="border-color:var(--border-soft)">
-            <div class="w-2 h-6 rounded-full" style={`background:${cat.color}`}></div>
-            <h3 class="text-sm font-medium" style="color:var(--text-1)">{cat.title}</h3>
-          </div>
+    <!-- ── 1. Stack principal ── -->
+    <div class="mb-5">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="text-xs font-medium uppercase tracking-widest" style="color:var(--text-3)">Stack principal</span>
+        <div class="flex-1 h-px" style="background:var(--border-soft)"></div>
+        <span class="text-xs px-2.5 py-1 rounded-full border" style="color:var(--green); border-color:color-mix(in srgb,var(--green) 30%,transparent); background:color-mix(in srgb,var(--green) 8%,transparent)">
+          Lo que realmente domino
+        </span>
+      </div>
 
-          <!-- Skill bars -->
-          <div class="space-y-3.5">
-            {cat.skills.map(skill => (
-              <div class="skill-item">
-                <div class="flex justify-between items-center mb-1.5">
-                  <span class="text-xs" style="color:var(--text-2)">{skill.name}</span>
-                  <span class="text-xs tabular-nums font-mono" style={`color:${cat.color}`}>{skill.level}%</span>
-                </div>
-                <div class="w-full h-1.5 rounded-full" style="background:var(--bg-muted)">
-                  <div
-                    class="skill-bar h-full rounded-full transition-all duration-700 ease-out"
-                    style={`width:0%; background:${cat.color}; box-shadow:0 0 8px ${cat.color}40`}
-                    data-level={skill.level}
-                  ></div>
-                </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {mainStack.map((s, i) => (
+          <div
+            class="group flex gap-4 p-5 rounded-2xl border transition-all duration-200 hover:border-[var(--accent)] hover:shadow-[var(--sh-md)] animate-fade-up"
+            style={`background:var(--bg-card); border-color:var(--border); animation-delay:${i * 0.08}s`}
+          >
+            <!-- Icon -->
+            <div
+              class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center text-white text-xs font-bold font-display shadow-[var(--sh-sm)]"
+              style={`background:${s.iconBg}`}
+            >
+              {s.icon}
+            </div>
+
+            <!-- Content -->
+            <div class="min-w-0">
+              <div class="flex items-start justify-between gap-2 mb-1 flex-wrap">
+                <h3 class="text-sm font-medium leading-snug" style="color:var(--text-1)">{s.name}</h3>
+                <span class="text-xs px-2 py-0.5 rounded-full border shrink-0" style={tagStyles[s.tagColor]}>
+                  {s.tag}
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <!-- Dev process -->
-    <div class="rounded-2xl border p-6 sm:p-8 mb-8 animate-fade-up delay-400"
-      style="background:var(--bg-card); border-color:var(--border)">
-      <h3 class="text-sm font-medium mb-7" style="color:var(--text-1)">Proceso de desarrollo</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-        {[
-          { num: "01", name: "Análisis",    desc: "Entiendo el problema antes de escribir una línea de código. Levanto requisitos, pregunto, modelo.",    color: "#60A5FA" },
-          { num: "02", name: "Desarrollo",  desc: "Código limpio, commits descriptivos y ramas organizadas. Me adapto al estilo del equipo.", color: "#A78BFA" },
-          { num: "03", name: "Revisión",    desc: "Testeo lo que construyo. No entrego sin haberlo probado yo mismo en escenarios reales.",       color: "#34D399" },
-          { num: "04", name: "Entrega",     desc: "Despiego, documento y acompaño. No desaparezco cuando el proyecto está listo.",          color: "#FB923C" },
-        ].map(step => (
-          <div class="relative">
-            <div class="font-display text-3xl font-bold mb-2 opacity-15" style={`color:${step.color}`}>{step.num}</div>
-            <div class="text-sm font-medium mb-1" style="color:var(--text-1)">{step.name}</div>
-            <div class="text-xs leading-relaxed" style="color:var(--text-3)">{step.desc}</div>
+              <p class="text-xs mb-2" style="color:var(--accent)">{s.sub}</p>
+              <p class="text-xs leading-relaxed" style="color:var(--text-2)">{s.desc}</p>
+            </div>
           </div>
         ))}
       </div>
     </div>
 
-    <!-- Languages -->
-    <div class="flex flex-wrap gap-3 animate-fade-up delay-500">
-      {[
-        { lang: "Español", level: "Nativo", color: "var(--accent)" },
-        { lang: "Inglés", level: "Básico / Intermedio", color: "var(--text-3)" },
-      ].map(l => (
-        <div class="flex items-center gap-3 px-5 py-3 rounded-xl border" style="background:var(--bg-card); border-color:var(--border)">
-          <div class="w-2 h-2 rounded-full" style={`background:${l.color}`}></div>
-          <span class="text-sm font-medium" style="color:var(--text-1)">{l.lang}</span>
-          <span class="text-xs" style="color:var(--text-3)">{l.level}</span>
-        </div>
-      ))}
+    <!-- ── 2. También uso ── -->
+    <div class="mb-5 animate-fade-up delay-300">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="text-xs font-medium uppercase tracking-widest" style="color:var(--text-3)">También uso</span>
+        <div class="flex-1 h-px" style="background:var(--border-soft)"></div>
+        <span class="text-xs" style="color:var(--text-3)">Complementario · sin ser mi foco</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {secondary.map(s => (
+          <div
+            class="flex flex-col items-center text-center gap-1.5 p-4 rounded-xl border transition-colors duration-200 hover:border-[var(--accent)]"
+            style="background:var(--bg-card); border-color:var(--border)"
+          >
+            <span class="text-sm font-medium" style="color:var(--text-1)">{s.name}</span>
+            <span class="text-xs leading-tight" style="color:var(--text-3)">{s.note}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── 3. Metodología y herramientas ── -->
+    <div class="mb-8 animate-fade-up delay-400">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="text-xs font-medium uppercase tracking-widest" style="color:var(--text-3)">Metodología & herramientas</span>
+        <div class="flex-1 h-px" style="background:var(--border-soft)"></div>
+      </div>
+
+      <div class="flex flex-wrap gap-2.5">
+        {tools.map(t => (
+          <div
+            class="flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-colors duration-200 hover:border-[var(--accent)]"
+            style="background:var(--bg-card); border-color:var(--border)"
+          >
+            <span class="text-base leading-none">{t.icon}</span>
+            <span class="text-sm" style="color:var(--text-2)">{t.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── 4. Idiomas ── -->
+    <div class="flex flex-wrap gap-3 pt-6 border-t animate-fade-up delay-500" style="border-color:var(--border-soft)">
+      <div class="flex items-center gap-3 px-5 py-3 rounded-xl border" style="background:var(--bg-card); border-color:var(--border)">
+        <div class="w-2 h-2 rounded-full" style="background:var(--accent)"></div>
+        <span class="text-sm font-medium" style="color:var(--text-1)">Español</span>
+        <span class="text-xs" style="color:var(--text-3)">Nativo</span>
+      </div>
+      <div class="flex items-center gap-3 px-5 py-3 rounded-xl border" style="background:var(--bg-card); border-color:var(--border)">
+        <div class="w-2 h-2 rounded-full" style="background:var(--text-3)"></div>
+        <span class="text-sm font-medium" style="color:var(--text-1)">Inglés</span>
+        <span class="text-xs" style="color:var(--text-3)">Básico / Intermedio — lectura técnica fluida</span>
+      </div>
     </div>
 
   </div>
 </section>
-
-<script>
-  function initBars() {
-    const bars = document.querySelectorAll<HTMLElement>('.skill-bar');
-    const section = document.getElementById('skills');
-    if (!section || !bars.length) return;
-
-    const obs = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        bars.forEach((bar, i) => {
-          const lv = bar.getAttribute('data-level') ?? '0';
-          setTimeout(() => { bar.style.width = `${lv}%`; }, i * 50 + 100);
-        });
-        obs.disconnect();
-      }
-    }, { threshold: 0.15 });
-
-    obs.observe(section);
-  }
-
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initBars);
-  else initBars();
-  document.addEventListener('astro:page-load', initBars);
-</script>
