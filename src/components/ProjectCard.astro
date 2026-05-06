@@ -9,12 +9,14 @@ export interface Props {
   githubUrl?: string;
   liveUrl?: string;
   featured?: boolean;
+  illustration?: string;
 }
 
 const {
   title, description, technologies,
   badge, year, category = "web",
   githubUrl, liveUrl, featured = false,
+  illustration,
 } = Astro.props;
 
 const badgeCfg: Record<string, { label: string; cls: string }> = {
@@ -129,9 +131,9 @@ const illustrationSvg: Record<string, string> = {
   </svg>`,
 };
 
-const bg  = illustrationBg[category]  ?? illustrationBg.web;
-const svg = illustrationSvg[category] ?? illustrationSvg.web;
-const b   = badge ? badgeCfg[badge]   : null;
+const bg  = illustrationBg[category] ?? illustrationBg.web;
+const svg = illustration ?? illustrationSvg[category] ?? illustrationSvg.web;
+const b   = badge ? badgeCfg[badge] : null;
 
 const cardBorder = (featured || badge === "destacado")
   ? "border-amber-500/30 hover:border-amber-400/60"
