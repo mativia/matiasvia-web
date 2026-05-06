@@ -157,32 +157,51 @@ const certs = [
     </svg>`,
   },
   {
-    title: "Certificación Udemy",
+    title: "Ingeniería de LLM",
     issuer: "Udemy",
     date: "2024",
     type: "image" as const,
     file: udemyCert.src,
-    desc: "Curso completado en plataforma Udemy",
+    desc: "Large Language Models: arquitectura, fine-tuning y aplicaciones prácticas",
     glowColor: "#A435F0",
     illustration: `<svg viewBox="0 0 320 176" xmlns="http://www.w3.org/2000/svg">
-      <rect width="320" height="176" fill="#1A0A2E"/>
-      <rect width="320" height="176" fill="url(#udmygrid)" opacity="0.05"/>
-      <defs>
-        <pattern id="udmygrid" width="24" height="24" patternUnits="userSpaceOnUse">
-          <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#A435F0" stroke-width="0.4"/>
-        </pattern>
-      </defs>
-      <circle cx="240" cy="88" r="64" fill="#A435F0" opacity="0.08"/>
-      <circle cx="240" cy="88" r="48" fill="#A435F0" opacity="0.07"/>
-      <text x="194" y="116" font-family="Arial Black, sans-serif" font-size="52" font-weight="900" fill="#A435F0" opacity="0.9">U</text>
-      <rect x="22" y="48" width="140" height="14" rx="3" fill="#2D1A50" opacity="0.7"/>
-      <text x="30" y="59" font-family="sans-serif" font-size="9" fill="#D8B4FE">Certificado de finalizacion</text>
-      <rect x="22" y="70" width="100" height="8" rx="2" fill="#3D2060" opacity="0.6"/>
-      <rect x="22" y="84" width="120" height="8" rx="2" fill="#3D2060" opacity="0.5"/>
-      <rect x="22" y="98" width="80" height="8" rx="2" fill="#3D2060" opacity="0.4"/>
-      <rect x="22" y="120" width="130" height="18" rx="9" fill="#A435F0" opacity="0.25" stroke="#A435F0" stroke-width="0.8"/>
-      <text x="87" y="132" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#D8B4FE">Udemy · 2024</text>
-      <text x="22" y="162" font-family="sans-serif" font-size="9" fill="#6B21A8" opacity="0.7">udemy.com</text>
+      <rect width="320" height="176" fill="#0E0A1A"/>
+      <!-- neural network nodes -->
+      <circle cx="36"  cy="52"  r="5" fill="#A435F0" opacity="0.7"/>
+      <circle cx="36"  cy="88"  r="5" fill="#A435F0" opacity="0.7"/>
+      <circle cx="36"  cy="124" r="5" fill="#A435F0" opacity="0.7"/>
+      <circle cx="96"  cy="36"  r="5" fill="#7C3AED" opacity="0.65"/>
+      <circle cx="96"  cy="70"  r="5" fill="#7C3AED" opacity="0.65"/>
+      <circle cx="96"  cy="104" r="5" fill="#7C3AED" opacity="0.65"/>
+      <circle cx="96"  cy="138" r="5" fill="#7C3AED" opacity="0.65"/>
+      <circle cx="156" cy="52"  r="5" fill="#6D28D9" opacity="0.6"/>
+      <circle cx="156" cy="88"  r="5" fill="#6D28D9" opacity="0.6"/>
+      <circle cx="156" cy="124" r="5" fill="#6D28D9" opacity="0.6"/>
+      <!-- connections layer 1→2 -->
+      <line x1="41" y1="52"  x2="91" y2="36"  stroke="#A435F0" stroke-width="0.6" opacity="0.25"/>
+      <line x1="41" y1="52"  x2="91" y2="70"  stroke="#A435F0" stroke-width="0.6" opacity="0.25"/>
+      <line x1="41" y1="52"  x2="91" y2="104" stroke="#A435F0" stroke-width="0.6" opacity="0.15"/>
+      <line x1="41" y1="88"  x2="91" y2="36"  stroke="#A435F0" stroke-width="0.6" opacity="0.2"/>
+      <line x1="41" y1="88"  x2="91" y2="70"  stroke="#A435F0" stroke-width="0.6" opacity="0.3"/>
+      <line x1="41" y1="88"  x2="91" y2="104" stroke="#A435F0" stroke-width="0.6" opacity="0.3"/>
+      <line x1="41" y1="88"  x2="91" y2="138" stroke="#A435F0" stroke-width="0.6" opacity="0.15"/>
+      <line x1="41" y1="124" x2="91" y2="104" stroke="#A435F0" stroke-width="0.6" opacity="0.25"/>
+      <line x1="41" y1="124" x2="91" y2="138" stroke="#A435F0" stroke-width="0.6" opacity="0.3"/>
+      <!-- connections layer 2→3 -->
+      <line x1="101" y1="36"  x2="151" y2="52"  stroke="#7C3AED" stroke-width="0.6" opacity="0.2"/>
+      <line x1="101" y1="70"  x2="151" y2="52"  stroke="#7C3AED" stroke-width="0.6" opacity="0.25"/>
+      <line x1="101" y1="70"  x2="151" y2="88"  stroke="#7C3AED" stroke-width="0.6" opacity="0.3"/>
+      <line x1="101" y1="104" x2="151" y2="88"  stroke="#7C3AED" stroke-width="0.6" opacity="0.3"/>
+      <line x1="101" y1="104" x2="151" y2="124" stroke="#7C3AED" stroke-width="0.6" opacity="0.25"/>
+      <line x1="101" y1="138" x2="151" y2="124" stroke="#7C3AED" stroke-width="0.6" opacity="0.2"/>
+      <!-- right side: LLM label -->
+      <rect x="178" y="30" width="126" height="116" rx="8" fill="#1A0A2E" stroke="#3D1D6B" stroke-width="0.8"/>
+      <text x="241" y="68" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="#A435F0">LLM</text>
+      <rect x="190" y="76" width="102" height="1" fill="#3D1D6B"/>
+      <text x="241" y="92" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#C4B5FD">Ingenieria de</text>
+      <text x="241" y="105" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#C4B5FD">Large Language Models</text>
+      <rect x="196" y="116" width="90" height="16" rx="8" fill="#A435F0" opacity="0.2" stroke="#A435F0" stroke-width="0.7"/>
+      <text x="241" y="127" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="#D8B4FE">Udemy · 2024</text>
     </svg>`,
   },
 ];
