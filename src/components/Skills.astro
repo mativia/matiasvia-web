@@ -52,12 +52,12 @@ const cats = [
 
     <!-- Header -->
     <div class="mb-14 animate-fade-up">
-      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">Competencias</p>
+      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">Qué sé hacer</p>
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold" style="color:var(--text-1)">
         Stack técnico
       </h2>
       <p class="mt-4 text-sm sm:text-base max-w-xl" style="color:var(--text-2)">
-        Tecnologías, herramientas y habilidades que aplico en proyectos reales.
+        Tecnologías con las que trabajo a diario en proyectos reales — no solo en cursos.
       </p>
     </div>
 
@@ -102,10 +102,10 @@ const cats = [
       <h3 class="text-sm font-medium mb-7" style="color:var(--text-1)">Proceso de desarrollo</h3>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
         {[
-          { num: "01", name: "Análisis",    desc: "Relevamiento de requisitos y diseño de arquitectura",    color: "#60A5FA" },
-          { num: "02", name: "Desarrollo",  desc: "Codificación con buenas prácticas y control de versiones", color: "#A78BFA" },
-          { num: "03", name: "Revisión",    desc: "Testing y aseguramiento de calidad del entregable",       color: "#34D399" },
-          { num: "04", name: "Entrega",     desc: "Despliegue, documentación y soporte al cliente",          color: "#FB923C" },
+          { num: "01", name: "Análisis",    desc: "Entiendo el problema antes de escribir una línea de código. Levanto requisitos, pregunto, modelo.",    color: "#60A5FA" },
+          { num: "02", name: "Desarrollo",  desc: "Código limpio, commits descriptivos y ramas organizadas. Me adapto al estilo del equipo.", color: "#A78BFA" },
+          { num: "03", name: "Revisión",    desc: "Testeo lo que construyo. No entrego sin haberlo probado yo mismo en escenarios reales.",       color: "#34D399" },
+          { num: "04", name: "Entrega",     desc: "Despiego, documento y acompaño. No desaparezco cuando el proyecto está listo.",          color: "#FB923C" },
         ].map(step => (
           <div class="relative">
             <div class="font-display text-3xl font-bold mb-2 opacity-15" style={`color:${step.color}`}>{step.num}</div>

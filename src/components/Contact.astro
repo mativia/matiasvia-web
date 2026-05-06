@@ -6,12 +6,13 @@
 
     <!-- Header -->
     <div class="mb-12 animate-fade-up">
-      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">Contacto</p>
+      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">¿Necesitás un desarrollador?</p>
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style="color:var(--text-1)">
         Hablemos
       </h2>
       <p class="text-sm sm:text-base max-w-xl" style="color:var(--text-2)">
-        Estoy disponible para proyectos freelance, oportunidades laborales y colaboraciones en desarrollo e IA.
+        Estoy buscando mi primera posición en una empresa de tecnología. Si tu equipo necesita alguien que
+        entregue, aprenda rápido y trabaje bien con otros, me encantaría conectar.
       </p>
     </div>
 
@@ -25,10 +26,10 @@
           style="background:color-mix(in srgb,var(--green) 8%,transparent); border-color:color-mix(in srgb,var(--green) 25%,transparent)">
           <div class="flex items-center gap-2 mb-2">
             <span class="w-2 h-2 rounded-full bg-[var(--green)] animate-pulse"></span>
-            <span class="text-sm font-medium" style="color:var(--green)">Disponible ahora</span>
+            <span class="text-sm font-medium" style="color:var(--green)">Disponible · Incorporación inmediata</span>
           </div>
           <p class="text-xs leading-relaxed" style="color:color-mix(in srgb,var(--green) 80%,var(--text-2))">
-            Abierto a propuestas freelance y posiciones en equipos que trabajen con desarrollo e IA.
+            Busco mi primera posición en una empresa tech. También acepto proyectos freelance y colaboraciones puntuales.
           </p>
         </div>
 
@@ -89,7 +90,7 @@
       <!-- Form (3/5) -->
       <div class="lg:col-span-3 animate-fade-up delay-200">
         <div class="p-6 sm:p-8 rounded-2xl border" style="background:var(--bg-card); border-color:var(--border)">
-          <h3 class="text-base font-medium mb-6" style="color:var(--text-1)">Enviar mensaje</h3>
+          <h3 class="text-base font-medium mb-6" style="color:var(--text-1)">Escribime directamente</h3>
 
           <form id="contact-form" class="space-y-4">
             <div class="grid sm:grid-cols-2 gap-4">
@@ -107,21 +108,21 @@
 
             <div>
               <label for="subject" class="block text-xs mb-1.5" style="color:var(--text-3)">Asunto *</label>
-              <input type="text" id="subject" name="subject" required placeholder="¿En qué puedo ayudarte?"
+              <input type="text" id="subject" name="subject" required placeholder="Propuesta de trabajo, proyecto o consulta"
                 class="contact-input w-full"/>
             </div>
 
             <div>
               <label for="message" class="block text-xs mb-1.5" style="color:var(--text-3)">Mensaje *</label>
               <textarea id="message" name="message" rows="5" required
-                placeholder="Contame sobre tu proyecto o propuesta..."
+                placeholder="Contame sobre la posición, el equipo o el proyecto..."
                 class="contact-input w-full resize-none"></textarea>
             </div>
 
             <button type="submit" id="submit-btn"
               class="w-full py-3 rounded-xl text-sm font-medium text-white transition-all duration-200 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               style="background:var(--accent)">
-              <span id="submit-text">Enviar mensaje</span>
+              <span id="submit-text">Enviar →</span>
               <span id="submit-loading" class="hidden items-center gap-2">
                 <svg class="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"/>
@@ -135,7 +136,7 @@
           <div id="form-message" class="mt-4 hidden">
             <div id="success-message" class="hidden px-4 py-3 rounded-xl text-xs"
               style="background:color-mix(in srgb,var(--green) 10%,transparent); color:var(--green); border:1px solid color-mix(in srgb,var(--green) 25%,transparent)">
-              Mensaje enviado correctamente. Te responderé pronto.
+              Mensaje enviado. Te respondo en menos de 24 hs.
             </div>
             <div id="error-message" class="hidden px-4 py-3 rounded-xl text-xs"
               style="background:rgba(239,68,68,.08); color:#F87171; border:1px solid rgba(239,68,68,.2)">

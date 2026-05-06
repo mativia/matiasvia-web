@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard.astro';
 const projects = [
   {
     title: "Sistema de ventas y facturación",
-    description: "App de escritorio en Python/Tkinter con SQLite. Registro de ventas, generación de facturas PDF y automatización de reportes semanales.",
+    description: "Automaticé por completo la operación de una panadería: registro de ventas, emisión de facturas PDF y reportes semanales automáticos. El cliente dejó de dedicar horas a tareas manuales.",
     technologies: ["Python", "Tkinter", "SQLite", "PDF"],
     badge: "destacado" as const,
     year: "2024",
@@ -14,15 +14,15 @@ const projects = [
   },
   {
     title: "Osaka · Tienda WooCommerce",
-    description: "E-commerce completo con WooCommerce: integración de pagos, child-theme PHP/CSS, optimización SEO y rendimiento.",
-    technologies: ["WordPress", "WooCommerce", "PHP", "CSS"],
+    description: "E-commerce funcional y a medida: catálogo, carrito, pasarela de pagos, child-theme en PHP/CSS y optimización de carga. El negocio pasó de vender solo en persona a tener canal online.",
+    technologies: ["WordPress", "WooCommerce", "PHP", "CSS", "SEO"],
     badge: "e-commerce" as const,
     year: "2024",
     category: "e-commerce" as const,
   },
   {
-    title: "GoGo Travel · Landing de leads",
-    description: "Sitio WordPress + Elementor para agencia de viajes. Copy orientado a conversión, formularios y mejoras SEO/UX.",
+    title: "GoGo Travel · Landing de conversión",
+    description: "Diseñé y desarrollé una landing orientada a captura de leads para una agencia de viajes. Formularios integrados, copy enfocado en conversión y estructura SEO desde el día uno.",
     technologies: ["WordPress", "Elementor", "UX", "SEO"],
     badge: "freelance" as const,
     year: "2023",
@@ -30,24 +30,24 @@ const projects = [
   },
   {
     title: "Quantum Sports · E-commerce",
-    description: "Tienda deportiva con WooCommerce. Catálogo, experiencia móvil optimizada y logística integrada.",
-    technologies: ["WooCommerce", "PHP", "Responsive"],
+    description: "Tienda online completa para una marca de indumentaria deportiva: catálogo con variantes, experiencia de compra mobile-first y configuración de envíos y logística.",
+    technologies: ["WooCommerce", "PHP", "Responsive", "UX"],
     badge: "e-commerce" as const,
     year: "2024",
     category: "e-commerce" as const,
   },
   {
     title: "Autoclinic · Gestión de talleres",
-    description: "Sistema de gestión para talleres mecánicos. Control de turnos, clientes, vehículos e historial de servicios.",
-    technologies: ["C#", "Windows Forms", "MySQL"],
+    description: "Sistema de gestión integral para talleres mecánicos: turnos, historial de reparaciones por vehículo, base de clientes y reportes. Desarrollado como proyecto de seminario académico.",
+    technologies: ["C#", "Windows Forms", "MySQL", "POO"],
     badge: "académico" as const,
     year: "2025",
     category: "académico" as const,
   },
   {
-    title: "Sistema de pasajes aéreos",
-    description: "App Windows Forms con MySQL para venta y administración de pasajes. Panel de control y reportes integrados.",
-    technologies: ["C#", "Windows Forms", "MySQL"],
+    title: "Aerolínea · Sistema de pasajes",
+    description: "Aplicación de gestión para venta y administración de pasajes aéreos con panel de control, reportes de ocupación y manejo de roles. Proyecto académico con base de datos real.",
+    technologies: ["C#", "Windows Forms", "MySQL", "SQL"],
     badge: "académico" as const,
     year: "2024",
     category: "académico" as const,
@@ -68,7 +68,7 @@ const filters = [
 
     <!-- Header -->
     <div class="mb-12 animate-fade-up">
-      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">Portafolio</p>
+      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">Trabajo real, resultados concretos</p>
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold" style="color:var(--text-1)">
           Proyectos
@@ -114,10 +114,10 @@ const filters = [
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 pt-10 border-t animate-fade-up delay-300"
       style="border-color:var(--border)">
       {[
-        { value: "15+", label: "Proyectos completados" },
-        { value: "8+",  label: "Tecnologías" },
-        { value: "3",   label: "Clientes freelance" },
-        { value: "2+",  label: "Años activo" },
+        { value: "15+", label: "Proyectos entregados" },
+        { value: "3",   label: "Clientes reales" },
+        { value: "100%", label: "Proyectos terminados" },
+        { value: "2+",  label: "Años de experiencia" },
       ].map(s => (
         <div class="text-center p-5 rounded-xl border transition-colors duration-200 hover:border-[var(--accent)]"
           style="background:var(--bg-card); border-color:var(--border)">
@@ -132,7 +132,7 @@ const filters = [
       <a href="#contact"
         class="px-6 py-3 rounded-xl text-sm font-medium text-white text-center transition-all duration-200 hover:opacity-90"
         style="background:var(--accent)">
-        Iniciar un proyecto →
+        Contactarme →
       </a>
       <a href="https://github.com/mativia" target="_blank" rel="noopener noreferrer"
         class="px-6 py-3 rounded-xl text-sm font-medium text-center border transition-colors duration-200 hover:border-[var(--accent)] hover:text-[var(--accent)]"

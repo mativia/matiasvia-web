@@ -7,9 +7,9 @@ import profileImage from '../assets/WhatsApp Image 2024-08-01 at 10.42.17.jpeg';
 
     <!-- Section header -->
     <div class="mb-14 animate-fade-up">
-      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">Sobre mí</p>
+      <p class="text-xs font-medium uppercase tracking-widest mb-3" style="color:var(--accent)">Por qué contratarme</p>
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight" style="color:var(--text-1)">
-        Quién soy
+        Lo que aporto a tu equipo
       </h2>
     </div>
 
@@ -34,9 +34,9 @@ import profileImage from '../assets/WhatsApp Image 2024-08-01 at 10.42.17.jpeg';
         <!-- Quick facts -->
         <div class="mt-8 space-y-3 max-w-xs mx-auto lg:mx-0">
           {[
-            { icon: "📍", label: "Córdoba, Argentina · Remoto" },
-            { icon: "🎓", label: "UTN·FRC — Ingeniería en Sistemas" },
-            { icon: "⚡", label: "Especialización en IA aplicada" },
+            { icon: "📍", label: "Córdoba, Argentina · Trabajo remoto" },
+            { icon: "🎓", label: "UTN·FRC — Ingeniería en Sistemas (cursando)" },
+            { icon: "⚡", label: "Integración de IA en flujos productivos" },
           ].map(f => (
             <div class="flex items-center gap-3 px-4 py-3 rounded-xl border" style="background:var(--bg-card); border-color:var(--border)">
               <span class="text-lg shrink-0">{f.icon}</span>
@@ -47,7 +47,7 @@ import profileImage from '../assets/WhatsApp Image 2024-08-01 at 10.42.17.jpeg';
           <div class="flex items-center gap-3 px-4 py-3 rounded-xl border"
             style="background:color-mix(in srgb,var(--green) 8%,transparent); border-color:color-mix(in srgb,var(--green) 25%,transparent)">
             <span class="w-2 h-2 rounded-full bg-[var(--green)] animate-pulse shrink-0"></span>
-            <span class="text-sm font-medium" style="color:var(--green)">Disponible para proyectos</span>
+            <span class="text-sm font-medium" style="color:var(--green)">Disponible · Incorporación inmediata</span>
           </div>
         </div>
       </div>
@@ -58,29 +58,30 @@ import profileImage from '../assets/WhatsApp Image 2024-08-01 at 10.42.17.jpeg';
         <!-- Bio -->
         <div class="space-y-4 text-sm sm:text-base leading-relaxed" style="color:var(--text-2)">
           <p>
-            Soy <span class="font-medium" style="color:var(--text-1)">Mati</span>, estudiante avanzado de Ingeniería en Sistemas en la UTN·FRC,
-            próximo a obtener el título de Analista en Sistemas. Disfruto transformar ideas en productos
-            digitales y construir soluciones que generen un impacto real.
+            Soy <span class="font-medium" style="color:var(--text-1)">Matías Vía</span>, desarrollador full-stack con experiencia real en proyectos
+            freelance: e-commerce, sistemas de gestión y automatización de procesos. Actualmente cursando
+            el último tramo de Ingeniería en Sistemas en UTN·FRC y próximo a obtener el título de Analista en Sistemas.
           </p>
           <p>
-            Me apasiona integrar la <span class="font-medium" style="color:var(--accent)">inteligencia artificial</span> en mis proyectos para
-            agilizar procesos y ofrecer respuestas en tiempo récord. Uso la IA de forma consciente y
-            estratégica, aplicando los conocimientos académicos para dirigirla con criterio y buenas prácticas.
+            Integro <span class="font-medium" style="color:var(--accent)">inteligencia artificial</span> en mis flujos de trabajo para acortar tiempos
+            de entrega sin sacrificar calidad. No uso la IA como un atajo: la orquesto con criterio técnico,
+            revisando cada output con los conocimientos que la carrera me dio.
           </p>
           <p>
-            Cuento con experiencia en desarrollo web y software a medida, trabajando de forma independiente
-            y en equipos ágiles con Scrum. Busco sumarme a equipos que valoren la innovación y la mejora continua.
+            Me adapto rápido a equipos y metodologías. Trabajo con Scrum, manejo Git en equipo,
+            comunico avances con claridad y entrego funcionalidades completas — no parches.
+            Busco una empresa donde seguir creciendo y aportar valor desde el primer día.
           </p>
         </div>
 
         <!-- Principles -->
         <div>
-          <h3 class="text-sm font-medium mb-4" style="color:var(--text-1)">Principios de trabajo</h3>
+          <h3 class="text-sm font-medium mb-4" style="color:var(--text-1)">Lo que me diferencia</h3>
           <div class="grid sm:grid-cols-3 gap-3">
             {[
-              { icon: "🧹", title: "Código limpio", desc: "Mantenible, legible y escalable." },
-              { icon: "🔄", title: "Aprendizaje continuo", desc: "Siempre mejorando y actualizándome." },
-              { icon: "🎯", title: "Foco en el usuario", desc: "UX intuitiva en cada interfaz." },
+              { icon: "🚀", title: "Entrego, no prometo", desc: "Historial real de proyectos terminados y en producción." },
+              { icon: "🤝", title: "Trabajo en equipo", desc: "Scrum, Git colaborativo y comunicación constante." },
+              { icon: "🧠", title: "IA como ventaja", desc: "Produzco más en menos tiempo sin bajar la calidad." },
             ].map(p => (
               <div class="p-4 rounded-xl border transition-colors duration-200 hover:border-[var(--accent)]"
                 style="background:var(--bg); border-color:var(--border)">
@@ -98,21 +99,21 @@ import profileImage from '../assets/WhatsApp Image 2024-08-01 at 10.42.17.jpeg';
           <div class="space-y-5">
             {[
               {
-                role: "Desarrollador Python · Gestión de ventas",
+                role: "Desarrollador Python — Sistema de gestión comercial",
                 type: "Freelance · 2024",
-                desc: "App de escritorio (Tkinter + SQLite) con facturas PDF y reportes automatizados semanales.",
+                desc: "Construí desde cero una app de escritorio con Tkinter y SQLite que automatizó la facturación y los reportes semanales de una panadería, eliminando el trabajo manual del equipo.",
                 accent: "var(--accent)",
               },
               {
-                role: "Web Developer · WordPress & WooCommerce",
+                role: "Desarrollador Web — WordPress & WooCommerce",
                 type: "Freelance · 2023–2024",
-                desc: "Osaka (e-commerce), GoGo Travel (landing SEO) y Quantum Sports (tienda deportiva).",
+                desc: "Desarrollé y lancé tres proyectos para clientes reales: tienda Osaka (e-commerce con pagos integrados), landing GoGo Travel (orientada a conversión) y Quantum Sports (indumentaria deportiva).",
                 accent: "var(--accent)",
               },
               {
-                role: "Técnico VDC — Infraestructura",
+                role: "Técnico VDC — Infraestructura de redes",
                 type: "2022–2023",
-                desc: "Cableado estructurado, redes Wi-Fi, impresoras y telefonía IP.",
+                desc: "Instalación y configuración de cableado estructurado, redes Wi-Fi corporativas, telefonía IP e impresoras en red.",
                 accent: "var(--text-3)",
               },
             ].map(exp => (
@@ -129,7 +130,7 @@ import profileImage from '../assets/WhatsApp Image 2024-08-01 at 10.42.17.jpeg';
         <a href="#contact"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium text-white transition-all duration-200 hover:opacity-90 hover:scale-105"
           style="background:var(--accent)">
-          Trabajemos juntos
+          Solicitar entrevista
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
